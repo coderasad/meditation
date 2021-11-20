@@ -1328,8 +1328,7 @@ font-size: 22px;
 
 
 .dacstop-menu ul li a {
-    padding: 8px 20px;
-    
+	width: 104px;
     border-radius: 4px;
     z-index: 100;
 }
