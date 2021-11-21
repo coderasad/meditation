@@ -10,7 +10,7 @@ class SleepController extends Controller
 {
     public function index(){
         $data = SleepType::with('videos')->get();
-        dd($data);
+        // dd($data);
         $title = "Sleep";
         return view('frontend.pages.sleep.sleep', compact('data', 'title'));
     }

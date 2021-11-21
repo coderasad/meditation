@@ -1348,7 +1348,7 @@ img, svg {
 
 
 
-/* Upcomming Event */
+/* Start Home Page */
 .event-desc a {
     width: 72px;
     border: 1px solid #000000;
@@ -1372,5 +1372,34 @@ img, svg {
     font-size: 18px;
 }
 
+/* End Home Page */
+
+
+.events-details-text .join-btn {
+    display: block;
+    width: 243px;
+    height: 49px;
+    line-height: 4.9rem;
+    color: #000000;
+    background-color: #FFF;
+    border: 1px solid #000;
+}
+.events-details-text p {
+    margin: 3rem 0 3rem;
+}
+
+.date-content{
+    width: 142px;
+    height: 22px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2C2C2C;
+}
+.contribution-fee-content{
+    height: 22px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #2C2C2C;
+}
 
 
