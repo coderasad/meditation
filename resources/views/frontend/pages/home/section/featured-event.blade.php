@@ -15,7 +15,8 @@
                             class="img">
                         <p class="ps-700 s14 cff fe-live-date tc">Live Now</p>
                     </div>
-                    <div class="featured-events-content">
+
+                    {{--  <div class="featured-events-content">
                         <div class="featured-events-name">
                             <h4 class="ps-700 s18 c00">{{ $featured_event->event->title }}</h4>
                         </div>
@@ -28,9 +29,23 @@
                             </div>
                         </div>
                         <div class="featured-events">
-                            <a href="{{ url('event-details', $featured_event->id) }}" class="primary-btn">Join Now</a>
+                            <a href="{{ url('event-details', $featured_event->id) }}" class="primary-btn">Join</a>
+                        </div>
+                    </div>  --}}
+
+                    <div class="featured-events-content">
+                    <div class="session-content">
+                        <div class="session-name">
+                            <h4 class="ps-700 s18 c00">{{ $featured_event->event->title }}</h4>
+                        </div>
+                        <div class="event-desc-1">
+                            <p class="ps-400 s14 c6a">{{ $featured_event->event->description }}</p>
+                            <a href="{{ url('event-details', $featured_event->event->id) }}" class="ps-700 s16 cb6">More...</a>
+                            <a href="{{ url('event-details', $featured_event->event->id) }}" class="ps-700 s18 cff tc mx-auto d-block">Join</a>
                         </div>
                     </div>
+                    </div>
+
                 </div>
             </div>
                @endforeach

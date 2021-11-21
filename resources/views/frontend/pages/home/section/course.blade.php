@@ -1,44 +1,37 @@
-<section class="courses-section" id="Courses">
+<section class="courses-section d-none d-sm-block mt-3" id="Courses">
     <div class="container p-relative">
         <div class="courses-title">
             <h2 class="ps-700 s32 c00">Our Courses</h2>
         </div>
 
-        <!-- Swiper Slider Start -->
-        <div class="swiper-container swiper-container1">
-            <div class="swiper-wrapper swiper-slide-pb">
-                @foreach ($courses as $course)
-                <div class="swiper-slide">
-                    <div class="courses shadow-4 rounded-tt">
-                        <div class="courses-img">
-                            <img src="{{ asset($course->image) }}" alt="courses" class="img">
-                        </div>
-                        <div class="courses-content">
-                            <div class="courses-name d-flex justify-content-between align-items-center">
-                                <h4 class="ps-700 s22 c00">{{ $course->title }}</h4>
-                                <ul class="d-flex justify-content-between">
-                                    <li>
-                                        <img src="{{ asset('') }}asset/frontend/svg-icon/yellow-star.svg" alt="star">
-                                    </li>
-                                    <li class="ps-700 s16 c8a">4.5 (120)</li>
-                                </ul>
-                            </div>
-                            <div class="courses-desc">
-                                <p class="ps-400 s16 c51">
-                                    {{ $course->description }}
-                                </p>
-                            </div>
-                            <div class="courses-btn">
-                                <a href="{{ url('course-details', $course->id) }}" class="primary-btn">Book Now</a>
-                            </div>
-                        </div>
+
+
+        <div class="row g-5 event-wrapper">
+            @foreach ($courses as $course)
+            <div class="col-lg-4 col-sm-6">
+               <div class="event shadow-2">
+                <div class="event-img tr">
+                    <img src="{{ asset($course->image) }}" alt="courses" class="img">
+                </div>
+                <div class="event-content">
+                    <div class="event-date-titme d-flex justify-content-between">
+                    </div>
+                    <div class="event-desc-1">
+                        <h4 class="ps-700 s22 c00">{{ $course->title }}</h4>
+                        <p class="ps-400 s14 c6a">{{ $course->description }}</p>
+                        <a href="{{ url('course-details', $course->id) }}" class="ps-700 s16 cb6">More...</a>
+                    </div>
+                    <div class="event-desc event-desc-1">
+                        <a href="{{ url('course-details', $course->id) }}" class="ps-700 s18 cff tc mx-auto d-block">Join</a>
                     </div>
                 </div>
-                @endforeach
-
             </div>
+            </div>
+            @endforeach
+
         </div>
-        <!-- Swiper Slider End -->
+
+
 
         <!-- Swiper Slider Prev Btn -->
         <div class="swiper-btn courses-swiper-btn d-flex justify-content-between">

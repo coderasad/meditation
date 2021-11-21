@@ -1,6 +1,6 @@
 @if(count($upcoming_events) > 0)
-<section class="event-section d-none d-sm-block">
-    <div class="container">
+<section class="event-section d-none d-sm-block mb-4">
+    <div class="container p-relative">
         <div class="event-title">
             <h2 class="ps-700 s38 c00">Upcoming Event</h2>
         </div>
@@ -22,11 +22,12 @@
                     <div class="event-name">
                         <h4 class="ps-700 s20 c00">{{ $upcoming_event->title }}</h4>
                     </div>
-                    <div class="event-desc event-desc-1">
+                    <div class="event-desc-1">
                         <p class="ps-400 s14 c6a">{{ $upcoming_event->description }}</p>
-                        <a href="{{ url('event-details', $upcoming_event->id) }}" class="ps-700 s18 cff tc mx-auto d-block">Pre-book
-                            Now</a>
-                        <p class="tr s12 ps-400 c99">45 People Booked</p>
+                        <a href="{{ url('event-details', $upcoming_event->id) }}" class="ps-700 s16 cb6">More...</a>
+                    </div>
+                    <div class="event-desc event-desc-1">
+                        <a href="{{ url('event-details', $upcoming_event->id) }}" class="ps-700 s18 cff tc mx-auto d-block">Join</a>
                     </div>
                 </div>
             </div>
@@ -34,6 +35,17 @@
             @endforeach
 
         </div>
+
+        <!-- Swiper Slider Prev Btn -->
+        <div class="swiper-btn courses-swiper-btn d-flex justify-content-between">
+            <button type="button" class="circle d-flex justify-content-center align-items-center swiper-prev-1">
+                <img src="{{ asset('') }}asset/frontend/svg-icon/arrow-left.svg" alt="arrow right" class="">
+            </button>
+            <button type="button" class="circle d-flex justify-content-center align-items-center swiper-next-1">
+                <img src="{{ asset('') }}asset/frontend/svg-icon/arrow-right.svg" alt="arrow right" class="">
+            </button>
+        </div>
+
     </div>
 </section>
 @endif

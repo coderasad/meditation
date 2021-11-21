@@ -3,11 +3,10 @@
         <div class="session-title">
             <h2 class="ps-700 s32 c00">Indivisual Session</h2>
         </div>
-
-        <!-- Swiper Slider Start -->
         <div class="swiper-container swiper-container2">
+            @foreach ($indevidual_sessions as $indevidual_session)
             <div class="swiper-wrapper swiper-slide-pb">
-                @foreach ($indevidual_sessions as $indevidual_session)
+
                 <div class="swiper-slide">
                     <div class="session shadow-4 rounded-tt">
                         <div class="session-img">
@@ -17,28 +16,19 @@
                             <div class="session-name">
                                 <h4 class="ps-700 s18 c00">{{ $indevidual_session->event->title}}</h4>
                             </div>
-                            <div class="session-desc">
-                                <p class="ps-400 s16 c51">
-                                    {{ $indevidual_session->event->description }}
-                                </p>
-                            </div>
-                            <div class="session-m-r d-flex justify-content-between align-items-center">
+                            <div class="event-desc-1">
+                                <p class="ps-400 s14 c6a">{{ $indevidual_session->event->description }}</p>
                                 <a href="{{url('session-details',$indevidual_session->event->id)}}" class="ps-700 s16 cb6">More...</a>
-                                <ul class="d-flex justify-content-between">
-                                    <li>
-                                        <img src="{{ asset('') }}asset/frontend/svg-icon/yellow-star.svg" alt="star">
-                                    </li>
-                                    <li class="ps-700 s16 c8a">4.5 (120)</li>
-                                </ul>
+                                <a href="{{url('session-details',$indevidual_session->event->id)}}" class="ps-700 s18 cff tc mx-auto d-block">Join</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endforeach
-
             </div>
+            @endforeach
         </div>
-        <!-- Swiper Slider End -->
+
+
 
         <!-- Swiper Slider Prev Btn -->
         <div class="swiper-btn d-flex justify-content-between">

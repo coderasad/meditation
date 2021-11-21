@@ -1345,3 +1345,32 @@ font-size: 22px;
 img, svg {
     vertical-align: super;
 }
+
+
+
+/* Upcomming Event */
+.event-desc a {
+    width: 72px;
+    border: 1px solid #000000;
+    height: 32px;
+	background-color: #FFFFFF;
+	color: #000000 !important;
+    font-weight: normal;
+    font-size: 18px;
+
+}
+.event-desc-1 .cb6 {
+    color: black !important;
+}
+.event-desc-1 .cff {
+    width: 72px;
+    border: 1px solid #000000;
+    height: 32px;
+	background-color: #FFFFFF;
+	color: #000000 !important;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+
+
