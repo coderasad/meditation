@@ -4,10 +4,6 @@
             <div class="col-lg-7">
                 <div class="">
                     <div class="sd-title">
-                        <ul class="d-flex align-items-center">
-                            <li><img src="{{ asset('') }}asset/frontend/svg-icon/yellow-star.svg" alt="star"></li>
-                            <li class="ps-700 c00 s16">4.8 (120)</li>
-                        </ul>
                         <h2 class="ps-700 c00 s49">{{$data->title}}</h2>
                         <h3 class="ps-700 c00 s22">by Jone smith</h3>
                     </div>
@@ -15,7 +11,7 @@
                         <img src="{{ asset($data->image) }}" alt="Sessions Details" class="img">
                     </div>
                     <div class="sd-btn">
-                        <a href="javascript:void(0)" class="secondary-btn">Join Now</a>
+                        <a href="javascript:void(0)" class="secondary-btn join-btn">Join</a>
                     </div>
                     <div class="sd-text-box">
                         <h3 class="ps-700 c00 s28">What you’ll learn</h3>
@@ -40,12 +36,6 @@
                                         class="session-m-r session-details-m-r d-flex justify-content-between align-items-center">
                                         <a href="{{url('session-details',$row->id)}}" class="ps-700 s16 cb6">Join
                                             Now..</a>
-                                        <ul class="d-flex align-items-center justify-content-between">
-                                            <li>
-                                                <img src="{{ asset('') }}asset/frontend/svg-icon/y-star.svg" alt="star">
-                                            </li>
-                                            <li class="ps-700 s14 c8a">4.5 (120)</li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>

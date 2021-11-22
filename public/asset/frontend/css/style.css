@@ -1375,7 +1375,7 @@ img, svg {
 /* End Home Page */
 
 
-.events-details-text .join-btn, .course-details-section .join-btn {
+.events-details-text .join-btn, .course-details-section .join-btn,  .sessions-details-section .join-btn{
     display: block;
     width: 243px;
     height: 49px;
@@ -1407,4 +1407,9 @@ img, svg {
 }
 .cd-img img{
     max-height: 423px;
+}
+
+.sd-img .img {
+    width: 100%;
+    height: 423px;
 }
