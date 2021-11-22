@@ -3,8 +3,8 @@
         <div class="tab__area">
             <!---- TAB BTN ---->
             <div class="tab d-flex">
-                <button type="button" class="tablinks tc ps-700" onclick="openCity(event, 'London')" id="defaultOpen">Images</button>
-                <button type="button" class="tablinks tc ps-700" onclick="openCity(event, 'Paris')">Videos</button>
+                <button type="button" class="tablinks tc ps-700 images" onclick="openCity(event, 'London')" id="defaultOpen">Images</button>
+                <button type="button" class="tablinks tc ps-700 videos" onclick="openCity(event, 'Paris')">Videos</button>
             </div>
 
             <!-------- TAB CONTENT -------->
@@ -240,7 +240,6 @@
                     </div>
                     <div class="d-flex justify-content-between align-items-end">
                         <p class="ps-400 s12 c86">{{ $video->text }}</p>
-                        <p class="ps-400 s12 c86">10:23min</p>
                     </div>
                 </div>
                 @endforeach
