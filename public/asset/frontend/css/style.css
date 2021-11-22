@@ -1387,6 +1387,9 @@ img, svg {
 .events-details-text p {
     margin: 3rem 0 3rem;
 }
+.event .img{
+    height: 459px !important;
+}
 
 .date-content{
     width: 142px;
