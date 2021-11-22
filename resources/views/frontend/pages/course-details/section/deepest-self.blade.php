@@ -1,18 +1,15 @@
 <section class="course-details-section pt-100">
     <div class="container">
         <div class="cd-title">
-            <ul class="d-flex align-items-center">
-                <li><img src="{{ asset('') }}asset/frontend/svg-icon/yellow-star.svg" alt="star"></li>
-                <li class="ps-700 c00 s16">4.8 (120)</li>
-            </ul>
-            <h2 class="ps-700 c00 s49">This {{ $data->title }}</h2>
-            <h3 class="ps-700 c00 s22">by Jams Edro</h3>
+            <h2 class="ps-700 c00 s49">This {{ $data->title }} <span class="ps-700 c00 s22">by Jams Edro</span></h2>
+            <p class="date-content">Date: 01-02-2021</p>
+            <p class="contribution-fee-content">Contribution Fee: 10,000BDT </p>
         </div>
         <div class="cd-img">
             <img src="{{ asset($data->image) }}" alt="Course Details" class="img">
         </div>
         <div class="cd-btn">
-            <a href="javascript:void(0)" class="secondary-btn">Book Now</a>
+            <a href="javascript:void(0)" class="secondary-btn join-btn">Join</a>
         </div>
 
         <div class="row">

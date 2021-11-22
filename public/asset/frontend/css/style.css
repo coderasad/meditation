@@ -1375,7 +1375,7 @@ img, svg {
 /* End Home Page */
 
 
-.events-details-text .join-btn {
+.events-details-text .join-btn, .course-details-section .join-btn {
     display: block;
     width: 243px;
     height: 49px;
@@ -1402,4 +1402,9 @@ img, svg {
     color: #2C2C2C;
 }
 
-
+.cd-title span {
+    color: #474747 !important;
+}
+.cd-img img{
+    max-height: 423px;
+}
