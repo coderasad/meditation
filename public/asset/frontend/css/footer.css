@@ -1,6 +1,6 @@
 .footer-section {
-	padding-top: 6rem;
-	background: #E0EBED;
+	padding-top: 15px;
+	background: #D7D7D7;
 }
 
 .f-contact-info {
@@ -19,7 +19,6 @@
 }
 
 .f-social-link {
-	margin-bottom: 3rem;
 }
 
 .f-social-link ul li:not(:last-child) {
@@ -33,7 +32,7 @@
 
 .f-page-link,
 .f-right-logo {
-	padding-top: 8rem;
+	padding-top: 15px;
 }
 
 .f-page-link .f-title {
@@ -103,5 +102,5 @@
 	.f-page-link-2 {
 		padding-left: 0rem;
 	}
-	
+
 }

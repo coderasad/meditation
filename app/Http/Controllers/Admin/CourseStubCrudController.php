@@ -91,7 +91,7 @@ class CourseStubCrudController extends CrudController
                 [
                     'indivisual_session' => 'Indivisual Session',
                     'featured_events' => 'Featured Events',
-                    'popular_course' => 'Popular Course',
+                    'online_course' => 'Online Course',
                     'popular_session' => 'Popular Session'
                 ]
         ]);

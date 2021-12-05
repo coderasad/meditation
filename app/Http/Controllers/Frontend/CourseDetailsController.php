@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CourseDetailsController extends Controller
 {
     public function index($id){
-        $data = Event::where('id', $id)->first();
+        $data = Event::with('category')->where('id', $id)->first();
         return view('frontend.pages.course-details.course-details', compact('data'));
     }
 }

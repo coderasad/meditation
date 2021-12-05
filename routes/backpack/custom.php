@@ -28,4 +28,5 @@ Route::group([
     Route::crud('satori', 'SatoriCrudController');
     Route::crud('meditation-type', 'MeditationTypeCrudController');
     Route::crud('meditation', 'MeditationCrudController');
+    Route::crud('satori-video', 'SatoriVideoCrudController');
 }); // this should be the absolute last line of this file

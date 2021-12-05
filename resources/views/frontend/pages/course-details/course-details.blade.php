@@ -10,7 +10,7 @@
 
 @include('frontend.pages.course-details.section.deepest-self')
 
-@include('frontend.pages.course-details.section.review')
+{{--@include('frontend.pages.course-details.section.review')--}}
 
 
 @endsection

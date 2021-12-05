@@ -9,23 +9,15 @@ use App\Models\Event;
 
 class EventController extends Controller
 {
-    public function index(){
-        $all_events = Event::all();
-        // dd($all_events);
-        $live_events = Event::whereDate('starting_date', "<", date("Y-m-d"))
-        ->whereDate('ending_date', ">", date("Y-m-d"))
-        ->where('category_id', 1)
-        ->orderBy('id', 'DESC')
-        ->limit(20)->get();
-        $today_events = Event::whereDate('starting_date', "=", date("Y-m-d"))
-        ->where('category_id', 1)
-        ->orderBy('id', 'DESC')
-        ->limit(20)->get();
-        $upcoming_events = Event::whereDate('starting_date', "<", date("Y-m-d"))
-        ->where('category_id', 1)
-        ->orderBy('id', 'DESC')
-        ->limit(20)->get();
-        
-        return view('frontend.pages.events.events', compact('all_events', 'live_events', 'today_events', 'upcoming_events'));
+    public function index()
+    {
+        $all_events = Event::where('category',1)->paginate(9);
+        $upcoming_events = Event::where('category',1)->whereDate('starting_date', ">=", date("Y-m-d"))
+            ->where('category_id', 1)
+            ->orderBy('id', 'DESC')
+            ->limit(3)
+            ->get();
+
+        return view('frontend.pages.events.events', compact('all_events', 'upcoming_events'));
     }
 }

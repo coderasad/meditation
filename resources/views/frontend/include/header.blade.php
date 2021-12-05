@@ -38,7 +38,7 @@
                         <a href="{{ url('tryouts') }}" class="ps-700 s18 uppercase c4a">TRYOUTS</a>
                     </li>
                     <li>
-                        <a href="{{ url('signin') }}" class="ps-700 s18 uppercase c4a">SIGN IN</a>
+                        <a href="{{ url('signin') }}" class="ps-700 s18 uppercase c4a">LOGIN IN</a>
                     </li>
                     <li>
                         <img src="{{ asset('') }}asset/frontend/images/mute.svg" alt="">

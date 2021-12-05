@@ -1,7 +1,7 @@
 <section class="testimonial-section pt-50">
     <div class="container p-relative">
         <div class="testimonial-title">
-            <h2 class="ps-700 s38 c00">Testimonial</h2>
+            <h2 class="ps-700 font-24 c00">Testimonial</h2>
         </div>
 
         <!-- Swiper Slider Start -->

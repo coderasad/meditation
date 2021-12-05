@@ -10,10 +10,11 @@ use Illuminate\Http\Request;
 class GallaryController extends Controller
 {
     public function index(){
-        $gallaries = Gallary::all();
-        $videos = Video::all();
+        $gallaries = Gallary::paginate(9);
+        $videos = Video::orderby('id',"DESC")->skip(1)->take(3)->get();
+        $firstVideo = Video::orderby('id',"DESC")->first();
         // dd($videos);
 
-        return view('frontend.pages.gallary.gallary', compact('gallaries', 'videos'));
+        return view('frontend.pages.gallary.gallary', compact('gallaries', 'videos', 'firstVideo'));
     }
 }

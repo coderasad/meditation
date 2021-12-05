@@ -37,3 +37,18 @@ Route::get('meditation', 'Frontend\MeditationController@index');
 // signin and signup
 Route::get('signin', 'Frontend\SigninController@index');
 Route::get('signup', 'Frontend\SignupController@index');
+Route::get('example1', 'SslCommerzPaymentController@exampleEasyCheckout');
+
+// SSLCOMMERZ Start
+Route::get('/example1', 'SslCommerzPaymentController@exampleEasyCheckout');
+Route::get('/example2', 'SslCommerzPaymentController@exampleHostedCheckout');
+
+Route::post('/pay', 'SslCommerzPaymentController@index');
+Route::post('/pay-via-ajax', 'SslCommerzPaymentController@payViaAjax');
+
+Route::post('/success', 'SslCommerzPaymentController@success');
+Route::post('/fail', 'SslCommerzPaymentController@fail');
+Route::post('/cancel', 'SslCommerzPaymentController@cancel');
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END

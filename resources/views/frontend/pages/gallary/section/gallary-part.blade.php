@@ -28,27 +28,18 @@
                             <button type="button" class="ps-700 c00 s18" data-filter=".Locker">Locker</button>
                         </div> --}}
                         <div class="row g-5 mix-filter">
-                            <div class="col-sm-4">
-                                <div class="row g-5">
-                                    @foreach ($gallaries as $gallary)
-                                    <div class="col-12 mix Treenayana Therapy Shower">
-                                        <div class="ga-img">
-                                            <img src="{{ asset($gallary->image) }}" alt="gallary" class="img">
+                            @foreach ($gallaries as $gallary)
+                                <div class="col-sm-4">
+                                    <div class="row g-5">
+                                        <div class="col-12 mix treenayana-img Therapy Shower ">
+                                            <div class="ga-img treenayana-img">
+                                                <img cla src="{{ asset($gallary->image) }}" alt="gallary" class="img image-box">
+                                            </div>
                                         </div>
+
                                     </div>
-                                    @endforeach
-                                    {{-- <div class="col-12 mix Therapy">
-                                        <div class="ga-img">
-                                            <img src="{{ asset('') }}asset/frontend/images/gallary4.png" alt="gallary" class="img">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 mix Shower Library">
-                                        <div class="ga-img">
-                                            <img src="{{ asset('') }}asset/frontend/images/gallary5.png" alt="gallary" class="img">
-                                        </div>
-                                    </div> --}}
                                 </div>
-                            </div>
+                            @endforeach
 
                             {{-- <div class="col-sm-4">
                                 <div class="row g-5">
@@ -233,18 +224,30 @@
         <!-------- TAB CONTENT -------->
         <div id="Paris" class="tabcontent gallary-tab-video">
             <div class="row g-5">
-                @foreach ($videos as $video)
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-8 col-sm-6">
                     <div class="gallary-video">
-                        <iframe width="100%" height="165" src="https://www.youtube.com/embed/{{ $video->video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="165" src="https://www.youtube.com/embed/{{ $firstVideo->video }}"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
                     </div>
                     <div class="d-flex justify-content-between align-items-end">
-                        <p class="ps-400 s12 c86">{{ $video->text }}</p>
+                        <p class="ps-400 s12 c86">{{ $firstVideo->text }}</p>
                     </div>
                 </div>
-                @endforeach
-
-
+                <div class="col-md-4 col-sm-6">
+                    @foreach ($videos as $key=>$video)
+                        <div class="gallary-video">
+                            <iframe width="100%" height="165" src="https://www.youtube.com/embed/{{ $video->video }}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-end">
+                            <p class="ps-400 s12 c86">{{ $video->text }}</p>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

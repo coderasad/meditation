@@ -158,8 +158,8 @@
 				disableOnInteraction: false,
 			},
 			navigation: {
-				nextEl: '.swiper-next-3',
-				prevEl: '.swiper-prev-3',
+				nextEl: '.swiper-next-satori-swiper-container',
+				prevEl: '.swiper-prev-satori-swiper-container',
 			},
 			breakpoints: {
 				576: {

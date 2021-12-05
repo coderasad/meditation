@@ -37,7 +37,7 @@ class Satori extends Model
     */
     public function videos()
     {
-        return $this->hasMany(MeditationVideo::class);
+        return $this->hasMany(SatoriVideo::class);
     }
 
     /*

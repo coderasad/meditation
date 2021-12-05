@@ -13,10 +13,9 @@
             <!-- Swiper Slider Start -->
             <div class="swiper-container satori-swiper-container">
                 <div class="swiper-wrapper swiper-slide-pb">
-                    <div class="swiper-slide">
+                    <div class="swiper-slide">r
                         <div class="  rounded-tt">
-                            <div class="courses-img">
-                                {{--  <a href="{{ url('focus', $satori->id) }}">  --}}
+                            <div class="stario-img ">
                                 <a href="{{ url('sleep/') }}">
                                     <img src="{{ asset('/asset/frontend/images/sleep.jpg') }}" alt="courses" class="img">
                                 </a>
@@ -26,10 +25,11 @@
                             </div>
                         </div>
                     </div>
+                    <?php $i=1 ?>
                     @foreach ($satories as $satori)
                     <div class="swiper-slide">
                         <div class="  rounded-tt">
-                            <div class="courses-img">
+                            <div class="stario-img">
                                 {{--  <a href="{{ url('focus', $satori->id) }}">  --}}
                                 <a href="{{ url('satori/'.$satori->title.'/'.$satori->id) }}">
                                     {{--  href="{{url($row->event->category_id==2 ? 'session-details' : 'course-details',$row->id)}}"   --}}
@@ -37,7 +37,7 @@
                                 </a>
                             </div>
                             <div class="satori-img-title tc">
-                                <h4 class="ps-700 s20 c22">{{ $satori->title }}</h4>
+                                <h4 class="ps-700 s20 c22">{{ $satori->title }} </h4>
                             </div>
                         </div>
                     </div>
@@ -49,10 +49,10 @@
 
             <!-- Swiper Slider Prev Btn -->
             <div class="swiper-btn courses-swiper-btn d-flex justify-content-between">
-                <button type="button" class="circle d-flex justify-content-center align-items-center swiper-prev-1">
+                <button type="button" class="circle d-flex justify-content-center align-items-center swiper-prev-satori-swiper-container">
                     <img src="{{ asset('') }}asset/frontend/svg-icon/arrow-left.svg" alt="arrow right" class="">
                 </button>
-                <button type="button" class="circle d-flex justify-content-center align-items-center swiper-next-1">
+                <button type="button" class="circle d-flex justify-content-center align-items-center swiper-next-satori-swiper-container">
                     <img src="{{ asset('') }}asset/frontend/svg-icon/arrow-right.svg" alt="arrow right" class="">
                 </button>
             </div>

@@ -1,95 +1,89 @@
 <section class="gellary-section py-100">
-    <div class="container">
-        <div class="filtering-btn">
-            <button type="button" class="ps-700 c00 s23" data-filter="all">All {{$title}}</button>
-            <button type="button" class="ps-700 c00 s23" data-filter=".popular-courses">Popular {{$title}}</button>
-            <button type="button" class="ps-700 c00 s23" data-filter=".new-courses">New {{$title}}</button>
+    <div class="container p-relative">
+
+        <div class="pb-3">
+            <h2 class="ps-700 font-24 c00">Online Course</h2>
         </div>
         <div class="row gx-4 gy-5 mix-filter">
-            @foreach ($new_data as $row)
-            <div class="col-lg-4 col-sm-6 mix new-courses">
-                <div class="courses shadow-4 rounded-tt">
-                    <div class="courses-img">
-                        <img src="{{ asset($row->image) }}" alt="courses" class="img">
-                    </div>
-                    <div class="courses-content">
-                        <div class="courses-name d-flex justify-content-between align-items-center">
-                            <h4 class="ps-700 s22 c00">{{ $row->title }}</h4>
-                            <ul class="d-flex justify-content-between">
-                                <li>
-                                    <img src="{{ asset('') }}asset/frontend/svg-icon/yellow-star.svg" alt="star">
-                                </li>
-                                <li class="ps-700 s16 c8a">4.5 (120)</li>
-                            </ul>
+
+            <div class="swiper-container  swiper-container1">
+                <div class="swiper-wrapper swiper-slide-pb">
+                    @foreach ($online_data as $course)
+                        <div class="swiper-slide">
+                            <div class="event shadow-2">
+                                <div class="event-img tr">
+                                    <img src="{{ asset($course->event->image) }}" alt="courses" class="img">
+                                </div>
+                                <div class="event-content">
+                                    <div class="event-date-titme d-flex justify-content-between">
+                                    </div>
+                                    <div class="event-desc-1 ">
+                                        <h4 class="ps-700 s22 c00">{{ $course->event->title }}</h4>
+                                        <p class="ps-400 s14 c6a height-50">{{  substr($course->event->description, 0, 80)  }} {{strlen($course->event->description) > 80 ? '...':''}}</p>
+
+                                    </div>
+                                    <div class="event-desc-1">
+                                        <a href="{{ url('course-details', $course->event->id) }}"
+                                           class="ps-700 s18 cff tc mx-auto d-block">Join</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="courses-desc">
-                            <p class="ps-400 s16 c51">
-                                {{ $row->description }}
-                            </p>
-                        </div>
-                        <div class="courses-btn">
-                            <a href="{{url('session-details',$row->id)}}" class="primary-btn">Book Now</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-            @endforeach
-            @foreach ($popular_data as $row)
-            <div class="col-lg-4 col-sm-6 mix popular-courses">
-                <div class="courses shadow-4 rounded-tt">
-                    <div class="courses-img">
-                        <img src="{{ asset($row->event->image) }}" alt="courses" class="img">
-                    </div>
-                    <div class="courses-content">
-                        <div class="courses-name d-flex justify-content-between align-items-center">
-                            <h4 class="ps-700 s22 c00">{{ $row->event->title }}</h4>
-                            <ul class="d-flex justify-content-between">
-                                <li>
-                                    <img src="{{ asset('') }}asset/frontend/svg-icon/yellow-star.svg" alt="star">
-                                </li>
-                                <li class="ps-700 s16 c8a">4.5 (230)</li>
-                            </ul>
+            <!-- Swiper Slider Prev Btn -->
+            <div class="swiper-btn courses-swiper-btn d-flex justify-content-between">
+                <button type="button" class="circle d-flex justify-content-center align-items-center swiper-prev-1">
+                    <img src="{{ asset('') }}asset/frontend/svg-icon/arrow-left.svg" alt="arrow right" class="">
+                </button>
+                <button type="button" class="circle d-flex justify-content-center align-items-center swiper-next-1">
+                    <img src="{{ asset('') }}asset/frontend/svg-icon/arrow-right.svg" alt="arrow right" class="">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container p-relative">
+        <div class="pb-3">
+            <h2 class="ps-700 font-24 c00">Onsite Course</h2>
+        </div>
+        <div class="row gx-4 gy-5 mix-filter">
+
+            <div class="swiper-container  swiper-container2">
+                <div class="swiper-wrapper swiper-slide-pb">
+                    @foreach ($all_data as $course)
+                        <div class="swiper-slide">
+                            <div class="event shadow-2">
+                                <div class="event-img tr">
+                                    <img src="{{ asset($course->image) }}" alt="courses" class="img">
+                                </div>
+                                <div class="event-content">
+                                    <div class="event-date-titme d-flex justify-content-between">
+                                    </div>
+                                    <div class="event-desc-1 ">
+                                        <h4 class="ps-700 s22 c00">{{ $course->title }}</h4>
+                                        <p class="ps-400 s14 c6a height-50">{{  substr($course->description, 0, 80)  }} {{strlen($course->description) > 80 ? '...':''}}</p>
+
+                                    </div>
+                                    <div class="event-desc-1">
+                                        <a href="{{ url('course-details', $course->id) }}"
+                                           class="ps-700 s18 cff tc mx-auto d-block">Join</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="courses-desc">
-                            <p class="ps-400 s16 c51">
-                                {{ $row->event->description }}
-                            </p>
-                        </div>
-                        <div class="courses-btn">
-                            <a href="{{url($row->event->category_id==2 ? 'session-details' : 'course-details',$row->id)}}" class="primary-btn">Book Now </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-            @endforeach
-            @foreach ($all_data as $row)
-            <div class="col-lg-4 col-sm-6 mix new-courses popular-courses">
-                <div class="courses shadow-4 rounded-tt">
-                    <div class="courses-img">
-                        <img src="{{ asset($row->event->image) }}" alt="courses" class="img">
-                    </div>
-                    <div class="courses-content">
-                        <div class="courses-name d-flex justify-content-between align-items-center">
-                            <h4 class="ps-700 s22 c00">{{ $row->event->title }}</h4>
-                            <ul class="d-flex justify-content-between">
-                                <li>
-                                    <img src="{{ asset('') }}asset/frontend/svg-icon/yellow-star.svg" alt="star">
-                                </li>
-                                <li class="ps-700 s16 c8a">4.5 (120)</li>
-                            </ul>
-                        </div>
-                        <div class="courses-desc">
-                            <p class="ps-400 s16 c51">
-                               {{ $row->event->description }}
-                            </p>
-                        </div>
-                        <div class="courses-btn">
-                            <a href="{{url('session-details',$row->id)}}" class="primary-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Swiper Slider Prev Btn -->
+            <div class="swiper-btn courses-swiper-btn d-flex justify-content-between">
+                <button type="button" class="circle d-flex justify-content-center align-items-center swiper-prev-2">
+                    <img src="{{ asset('') }}asset/frontend/svg-icon/arrow-left.svg" alt="arrow right" class="">
+                </button>
+                <button type="button" class="circle d-flex justify-content-center align-items-center swiper-next-2">
+                    <img src="{{ asset('') }}asset/frontend/svg-icon/arrow-right.svg" alt="arrow right" class="">
+                </button>
             </div>
-            @endforeach
 
         </div>
     </div>

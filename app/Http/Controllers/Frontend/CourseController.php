@@ -10,17 +10,11 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     public function index(){
-        $all_data = CourseStub::with('event')->where('type','course')->limit(20)->get();
-        // dd($all_data);
-        $popular_data = CourseStub::with('event')->where('type','popular_course')->limit(20)->get();
-        $new_data = Event::whereDate('starting_date', ">=", date('Y-m-d'))
-        ->where('category_id', 3)
-        ->orderBy('id', 'DESC')
-        ->limit(20)
-        ->get();
-        $title = "Course";
-        // dd($all_data);
+        $all_data = Event::where('category_id',2)->limit(20)->get();
+        $online_data = CourseStub::with('event')->where('type','online_course')->limit(20)->get();
 
-        return view('frontend.pages.courses.courses', compact('all_data' ,'popular_data', 'new_data', 'title'));
+        $title = "Course";
+
+        return view('frontend.pages.courses.courses', compact('all_data' ,'online_data', 'title'));
     }
 }

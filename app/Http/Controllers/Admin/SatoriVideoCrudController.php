@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\MeditationVideoRequest;
-use App\Models\MeditationVideo;
+use App\Http\Requests\SatoriVideoRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class MeditationVideoCrudController
+ * Class SatoriVideoCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class MeditationVideoCrudController extends CrudController
+class SatoriVideoCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -27,9 +27,9 @@ class MeditationVideoCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\MeditationVideo::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/meditation-video');
-        CRUD::setEntityNameStrings('meditation video', 'meditation videos');
+        CRUD::setModel(\App\Models\SatoriVideo::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/satori-video');
+        CRUD::setEntityNameStrings('satori video', 'satori videos');
     }
 
     /**
@@ -40,7 +40,7 @@ class MeditationVideoCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('meditation_id');
+        CRUD::column('satori_id');
         CRUD::column('video');
 
         /**
@@ -58,29 +58,17 @@ class MeditationVideoCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(MeditationVideoRequest::class);
+        CRUD::setValidation(SatoriVideoRequest::class);
+
 
         // CRUD::field('meditation_type_id');
         $this->crud->addField([    // SELECT2
-            'name' => 'meditation_id',
+            'name' => 'satori_id',
             'type' => 'select2',
-            'entity' => 'meditation',
+            'entity' => 'satori',
         ]);
 
         CRUD::field('video');
-
-
-        // $this->crud->addField([ // select2_from_ajax: 1-n relationship
-        //     'type' => 'select2_from_ajax_multiple',
-        //     'name' => 'video_id',
-        //     'entity' => 'video',
-        //     'attribute' => 'title',
-        //     'data_source' => url('api/video'),
-        //     'placeholder' => 'Select an article',
-        //     'include_all_form_fields' => true,
-        //     'minimum_input_length' => 0,
-        //     'dependencies' => ['meditation_type'],
-        // ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -99,5 +87,4 @@ class MeditationVideoCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
-
 }

@@ -1388,7 +1388,7 @@ img, svg {
     margin: 3rem 0 3rem;
 }
 .event .img{
-    height: 459px !important;
+    height: 207px !important;
 }
 
 .date-content{
@@ -1475,4 +1475,61 @@ img, svg {
 	background: #B6A75B !important;
 
 
+}
+.height-70{
+    height: 70px;
+}
+.height-100{
+    height: 100px;
+}
+.height-50{
+    height: 50px;
+}
+.font-24{
+    font-size:24px ;
+}
+
+.stario-img img{
+    height: 385px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.treenayana-img:nth-child(3n+1) .image-box:nth-child(1){
+    height: 339px;
+}
+
+.treenayana-img:nth-child(3n+1) .image-box:nth-child(2){
+    height: 205px;
+}
+
+.treenayana-img:nth-child(3n+1) .image-box:nth-child(3){
+    height: 430px;
+}
+
+
+/*/ treenayana-img-two /*/
+.treenayana-img:nth-child(3n+2) .image-box:nth-child(1){
+    height: 477px;
+}
+
+.treenayana-img:nth-child(3n+2) .image-box:nth-child(2){
+    height: 286px;
+}
+
+.treenayana-img:nth-child(3n+2) .image-box:nth-child(3){
+    height: 206px;
+}
+
+/*/ treenayana-img-three /*/
+.treenayana-img:nth-child(3n+3) .image-box:nth-child(1){
+    height: 289px;
+}
+
+.treenayana-img:nth-child(3n+3) .image-box:nth-child(2){
+    height: 338px;
+}
+
+.treenayana-img:nth-child(3n+3) .image-box:nth-child(3){
+    height: 345px;
 }
