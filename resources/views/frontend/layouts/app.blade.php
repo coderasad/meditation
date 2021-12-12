@@ -22,15 +22,6 @@
         <link rel="stylesheet" href="{{ asset('') }}asset/frontend/css/footer.css" />
         <link rel="stylesheet" href="{{ asset('') }}asset/frontend/css/responsive.css" />
         <script src="{{ asset('') }}asset/frontend/js/swiper-bundle.min.js"></script>
-        <style>
-            .carousel-item {
-                height: 500px ;
-            }
-            .carousel-caption {
-                top: 45%;
-                left: 35%;
-            }
-        </style>
 </head>
 
 <body>
