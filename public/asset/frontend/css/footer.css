@@ -1,14 +1,11 @@
 .footer-section {
-	padding-top: 15px;
+	padding-top: 46px;
+    padding-bottom: 20px;
 	background: #D7D7D7;
 }
 
-.f-contact-info {
-	margin: 1.5rem 0 2rem;
-}
-
-.f-contact-info ul li:first-child {
-	margin-bottom: 1.3rem;
+.f-contact-info ul li {
+	margin-bottom: 22px;
 }
 
 .f-contact-info ul li span {
@@ -18,19 +15,25 @@
 	margin-right: 1.2rem;
 }
 
-.f-social-link {
-}
-
-.f-social-link ul li:not(:last-child) {
-	margin-right: 1.3rem;
+.f-social-link a{
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #000;
+    margin-right: 1.5rem;
+    color: #fff;
+    padding: 5px;
 }
 
 .f-btn a {
-	padding: .6rem 1.5rem;
-	background: #2C2C2C;
+
+    width: 170px;
+    background: #2C2C2C;
+    vertical-align: middle;
+    padding: 6px 0;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-.f-page-link,
 .f-right-logo {
 	padding-top: 15px;
 }
@@ -54,7 +57,7 @@
 }
 
 .f-hr {
-	margin-top: 2.5rem;
+    margin: 20px 0;
 	border: 0;
 	border-bottom: .1rem solid #FFFFFF;
 }

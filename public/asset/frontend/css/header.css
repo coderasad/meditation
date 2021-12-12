@@ -3,24 +3,28 @@ header {
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding-top: 1rem;
-	padding-bottom: .4rem;
+    padding: 15px 0;
 	background: #FFFFFF;
 	z-index: 999;
 }
-
-.logo a img {
-	max-width: 10rem;
+.logo {
+    height: 66px;
+    width: 100px;
 }
 
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .header-text h3 {
 	word-spacing: .4rem;
 	letter-spacing: .2rem;
 }
 
-.h-sign-in-up ul li:first-child {
+/*.h-sign-in-up ul li:first-child {
 	margin-right: 2rem;
-}
+}*/
 
 .h-sign-in-up ul li .play-btn {
 	width: 4.4rem;
@@ -126,11 +130,11 @@ header {
 }
 
 @media (max-width: 400px) {
-	
+
 	.logo a img {
 		max-width: 8rem;
 	}
-	
+
 	.h-sign-in-up ul li a {
 		font-size: 1.5rem;
 	}

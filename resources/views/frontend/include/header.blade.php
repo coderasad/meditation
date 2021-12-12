@@ -30,23 +30,23 @@
                 <a href="{{ url('') }}"><img src="{{ asset('') }}asset/frontend/images/footer-logo.png" alt="logo"></a>
             </div>
             <div class="h-sign-in-up">
-                <ul class="d-flex align-items-end header-nav-menu">
+                <ul class="align-items-center d-flex header-nav-menu mb-0">
                     {{--  <li>
                         <a href="{{ url('signup') }}" class="ps-700 s18 uppercase cb6">SIGN UP</a>
                     </li>  --}}
                     <li>
-                        <a href="{{ url('tryouts') }}" class="ps-700 s18 uppercase c4a">TRYOUTS</a>
+                        <a href="{{ url('tryouts') }}" class="ps-700 s18 uppercase c4a active">TRYOUTS</a>
                     </li>
                     <li>
                         <a href="{{ url('signin') }}" class="ps-700 s18 uppercase c4a">LOGIN IN</a>
                     </li>
-                    <li>
+                    <li class="d-flex">
                         <img src="{{ asset('') }}asset/frontend/images/mute.svg" alt="">
                     </li>
-                    <li>
-                        <form class="d-flex">
+                    <li class="me-0">
+                        <form class="d-flex align-items-center">
                             <input class="form-control me-2 header-search " type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn" type="submit"><img src="{{ asset('') }}asset/frontend/images/search.png" alt=""></button>
+                            <button class="align-items-center btn d-flex header-search-btn justify-content-center" type="submit"><img src="{{ asset('') }}asset/frontend/images/search.png" alt=""></button>
                         </form>
                     </li>
 
