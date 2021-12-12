@@ -1,5 +1,5 @@
 <section class="hero-section1">
-    <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-interval="false" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel">
         <div class="carousel-indicators">
             @foreach($sliders as $key =>$slider)
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$key}}"

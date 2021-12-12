@@ -506,15 +506,19 @@ footer {
 }
 
 .swiper-btn button {
-	width: 5rem;
-	height: 5rem;
+	width: 3.4rem;
+	height: 3.4rem;
 	background: #FFFFFF;
-	-webkit-filter: drop-shadow(-4px 5px 45px rgba(0, 0, 0, 0.19));
-	filter: drop-shadow(-4px 5px 45px rgba(0, 0, 0, 0.19));
+	-webkit-filter: drop-shadow(-2.47273px 3.09091px 27.8182px rgba(0, 0, 0, 0.19));
+    filter: drop-shadow(-2.47273px 3.09091px 27.8182px rgba(0, 0, 0, 0.19));
 	-webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
+.swiper-btn button img {
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+}
 .swiper-btn button:first-child {
 	margin-left: -5rem;
 }
@@ -677,4 +681,17 @@ footer {
 		margin: 0 .7rem;
 	}
 
+}
+
+.overlay-ar{
+    position: relative;
+}
+.overlay-ar:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left:0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
 }

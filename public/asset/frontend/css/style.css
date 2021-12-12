@@ -35,7 +35,10 @@ Basic Setup
     background: #FD7319;
     height: 6rem;
 }
-
+h1,h2,h3,h4,h5,h6,p{
+    padding: 0;
+    margin: 0;
+}
 a,
 span,
 label {
@@ -188,12 +191,12 @@ Start Satori Section
 ===============================
 */
 .satori-title {
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
 }
 
 .satori-title p {
-    margin-top: 2.6rem;
-    max-width: 65.4rem;
+    margin-top: 2.0rem;
+    max-width: 57rem;
 }
 
 /*
@@ -1331,8 +1334,11 @@ Back To Top Btn
 }
 
 .satori-img-title.tc {
-    position: relative;
-    top: -30px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 26px;
 }
 
 .satori-img-title.tc h4 {
@@ -1565,10 +1571,17 @@ img, svg {
     font-size: 24px;
 }
 
-.stario-img img {
+.stario-img a {
     height: 385px;
-    width: 100%;
     border-radius: 10px;
+    overflow: hidden;
+    display: block;
+}
+
+.stario-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .treenayana-img:nth-child(3n+1) .image-box:nth-child(1) {
