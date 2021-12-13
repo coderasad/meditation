@@ -16,13 +16,12 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('invoice_no')->unique();
-            $table->bigInteger('orderable_id');
-            $table->string('orderable_type');
             $table->float('amount');
             $table->string('transaction_id')->index();
             $table->string('currency');
             $table->json('payment_details');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->morphs('orderable');
             $table->softDeletes();
             $table->timestamps();
         });

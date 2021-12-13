@@ -20,3 +20,5 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('meditation-type') }}'><i class='nav-icon la la-question'></i> Meditation types</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('meditation') }}'><i class='nav-icon la la-question'></i> Meditations</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('satori-video') }}'><i class='nav-icon la la-question'></i> Satori videos</a></li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('order') }}'><i class='nav-icon la la-question'></i> Orders</a></li>

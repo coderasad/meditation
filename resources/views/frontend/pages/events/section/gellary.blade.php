@@ -76,4 +76,5 @@ use Carbon\Carbon;
         var mixer = mixitup(containerEl);
 
     </script>
+
 </section>

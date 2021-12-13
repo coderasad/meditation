@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Meditation;
+use App\Models\Order;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use Illuminate\Support\Facades\Auth;
+use Psy\Util\Json;
 
 class SslCommerzPaymentController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function exampleEasyCheckout()
     {
         return view('exampleEasycheckout');
@@ -89,50 +97,53 @@ class SslCommerzPaymentController extends Controller
 
     }
 
+    /**
+     * @param Request $request
+     */
     public function payViaAjax(Request $request)
     {
+        $auth = Auth::user();
         # Here you have to receive all the order data to initate the payment.
         # Lets your oder trnsaction informations are saving in a table called "orders"
         # In orders table order uniq identity is "transaction_id","status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
         $cart_json = json_decode($request->cart_json);
         $productDetails = $this->getProductDetails($cart_json->productId, $cart_json->productType);
-        dd($productDetails->contribution_fee);
         $post_data = array();
         $post_data['total_amount'] = $productDetails->contribution_fee; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
-        $post_data['cus_name'] = 'Customer Name';
-        $post_data['cus_email'] = 'customer@mail.com';
-        $post_data['cus_add1'] = 'Customer Address';
+        $post_data['cus_name'] = $auth->name;
+        $post_data['cus_email'] = $auth->email;
+        $post_data['cus_add1'] = $auth->address ?? 'demo';
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
-        $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_country'] = "";
+        $post_data['cus_phone'] = $auth->phone ?? $this->random_number(11);
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION
-        $post_data['ship_name'] = "Store Test";
-        $post_data['ship_add1'] = "Dhaka";
-        $post_data['ship_add2'] = "Dhaka";
-        $post_data['ship_city'] = "Dhaka";
-        $post_data['ship_state'] = "Dhaka";
-        $post_data['ship_postcode'] = "1000";
+        $post_data['ship_name'] = "demo";
+        $post_data['ship_add1'] = "demo";
+        $post_data['ship_add2'] = "demo";
+        $post_data['ship_city'] = "demo";
+        $post_data['ship_state'] = "demo";
+        $post_data['ship_postcode'] = "0000";
         $post_data['ship_phone'] = "";
-        $post_data['ship_country'] = "Bangladesh";
+        $post_data['ship_country'] = "demo";
 
-        $post_data['shipping_method'] = "NO";
-        $post_data['product_name'] = "Computer";
-        $post_data['product_category'] = "Goods";
-        $post_data['product_profile'] = "physical-goods";
+        $post_data['shipping_method'] = "demo";
+        $post_data['product_name'] = "demo";
+        $post_data['product_category'] = "demo";
+        $post_data['product_profile'] = "demo";
 
         # OPTIONAL PARAMETERS
         $post_data['value_a'] = $cart_json->productId;
         $post_data['value_b'] = $cart_json->url;
-        $post_data['value_c'] = "ref003";
+        $post_data['value_c'] = ['Event'=>'Event', 'Session'=>'Event', 'Course'=>'Event', 'Meditation'=>'Meditation'][$cart_json->productType];
         $post_data['value_d'] = "ref004";
 
 
@@ -161,103 +172,48 @@ class SslCommerzPaymentController extends Controller
 
     }
 
+    /**
+     * @param int $length
+     * @return string
+     */
+    public function random_number($length = 5)
+    {
+        return join('', array_map(function ($value) {
+            return $value == 1 ? mt_rand(1, 9) : mt_rand(0, 9);
+        }, range(1, $length)));
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function success(Request $request)
     {
-        dd($request->all());
-        echo "Transaction is Successful";
-        return redirect($request->value_b . '/' . $request->value_a);
-
-//        $tran_id = $request->input('tran_id');
-//        $amount = $request->input('amount');
-//        $currency = $request->input('currency');
-//
-//        $sslc = new SslCommerzNotification();
-
-        #Check order status in order tabel against the transaction id or order id.
-//        $order_detials = DB::table('orders')
-//            ->where('transaction_id', $tran_id)
-//            ->select('transaction_id', 'status', 'currency', 'amount')->first();
-//
-//        if ($order_detials->status == 'Pending') {
-//            $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
-//
-//            if ($validation == TRUE) {
-//                /*
-//                That means IPN did not work or IPN URL was not set in your merchant panel. Here you need to update order status
-//                in order table as Processing or Complete.
-//                Here you can also sent sms or email for successfull transaction to customer
-//                */
-//                $update_product = DB::table('orders')
-//                    ->where('transaction_id', $tran_id)
-//                    ->update(['status' => 'Processing']);
-//
-//                echo "<br >Transaction is successfully Completed";
-//            } else {
-//                /*
-//                That means IPN did not work or IPN URL was not set in your merchant panel and Transation validation failed.
-//                Here you need to update order status as Failed in order table.
-//                */
-//                $update_product = DB::table('orders')
-//                    ->where('transaction_id', $tran_id)
-//                    ->update(['status' => 'Failed']);
-//                echo "validation Fail";
-//            }
-//        } else if ($order_detials->status == 'Processing' || $order_detials->status == 'Complete') {
-//            /*
-//             That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
-//             */
-//            echo "Transaction is successfully Completed";
-//        } else {
-//            #That means something wrong happened. You can redirect customer to your product page.
-//            echo "Invalid Transaction";
-//        }
-
-
+        $this->storeOrder($request);
+        return redirect($request->value_b . '/' . $request->value_a)->with('success', 'Transaction is Successful');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function fail(Request $request)
     {
-        $tran_id = $request->input('tran_id');
-
-        $order_detials = DB::table('orders')
-            ->where('transaction_id', $tran_id)
-            ->select('transaction_id', 'status', 'currency', 'amount')->first();
-
-        if ($order_detials->status == 'Pending') {
-            $update_product = DB::table('orders')
-                ->where('transaction_id', $tran_id)
-                ->update(['status' => 'Failed']);
-            echo "Transaction is Falied";
-        } else if ($order_detials->status == 'Processing' || $order_detials->status == 'Complete') {
-            echo "Transaction is already Successful";
-        } else {
-            echo "Transaction is Invalid";
-        }
-
+        return redirect($request->value_b . '/' . $request->value_a)->with('error', 'Transaction is fail');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function cancel(Request $request)
     {
-        $tran_id = $request->input('tran_id');
-
-        $order_detials = DB::table('orders')
-            ->where('transaction_id', $tran_id)
-            ->select('transaction_id', 'status', 'currency', 'amount')->first();
-
-        if ($order_detials->status == 'Pending') {
-            $update_product = DB::table('orders')
-                ->where('transaction_id', $tran_id)
-                ->update(['status' => 'Canceled']);
-            echo "Transaction is Cancel";
-        } else if ($order_detials->status == 'Processing' || $order_detials->status == 'Complete') {
-            echo "Transaction is already Successful";
-        } else {
-            echo "Transaction is Invalid";
-        }
-
-
+        return redirect($request->value_b . '/' . $request->value_a)->with('error', 'Transaction is cancle');
     }
 
+    /**
+     * @param Request $request
+     */
     public function ipn(Request $request)
     {
         #Received all the payement information from the gateway
@@ -312,21 +268,53 @@ class SslCommerzPaymentController extends Controller
         }
     }
 
+    /**
+     * @param $productId
+     * @param $productType
+     * @return mixed
+     */
     protected function getProductDetails($productId, $productType)
     {
-        if (in_array($productType,['Event', 'Course', 'Session'])) {
+        if (in_array($productType, ['Event', 'Course', 'Session'])) {
             return $this->getEventModelDetails($productId);
-        }  elseif ($productType == 'Meditation') {
-
+        } elseif ($productType == 'Meditation') {
+            return $this->getMeditationModelDetails($productId);
         }
     }
 
+    /**
+     * @param $productId
+     * @return mixed
+     */
     protected function getEventModelDetails($productId)
     {
         return Event::where('id', $productId)->first();
     }
-    protected function storeOrder($data){
 
+    /**
+     * @param $productId
+     * @return mixed
+     */
+    protected function getMeditationModelDetails($productId)
+    {
+        return Meditation::where('id', $productId)->first();
+    }
+
+    /**
+     * @param $request
+     * @return mixed
+     */
+    protected function storeOrder($request)
+    {
+        return Order::create(['invoice_no' => $this->random_number(),
+            'amount' => $request->amount,
+            'transaction_id' => $request->tran_id,
+            'currency' => $request->currency,
+            'payment_details' => Json::encode($request->all()),
+            'user_id' => Auth::user()->id,
+            'orderable_type' => "App\\Models\\" . $request->value_c,
+            'orderable_id' => $request->value_a
+        ]);
     }
 
 }

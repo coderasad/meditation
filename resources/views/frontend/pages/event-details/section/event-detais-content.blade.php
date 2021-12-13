@@ -1,3 +1,4 @@
+s@php(!auth()->check() ? session()->put('url.intended', url()->full()) : false)
 <section class="py-100">
     <div class="container">
         <div class="row g-5">
@@ -14,7 +15,12 @@
                     <p class="date-content">Date: 01-02-2021</p>
                     <p class="contribution-fee-content">Contribution Fee: 10,000BDT </p>
                     <p class="ps-400 s16 c60"> {{ $data->description }}</p>
-                    <a href="javascript:void(0)" class="secondary-btn join-btn">Join</a>
+                    <button class="secondary-btn join-btn" id="sslczPayBtn"
+                            token="if you have any token validation"
+                            postdata="your javascript arrays or objects which requires in backend"
+                            order="If you already have the transaction generated for current order"
+                            endpoint="{{ url('/pay-via-ajax') }}"> Pay Now
+                    </button>
                 </div>
             </div>
             <div class="col-xl-8 col-lg-7">
@@ -25,3 +31,33 @@
         </div>
     </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+
+<script>
+    let isLogin = !!"{{auth()->check()}}";
+    let sslczPayBtn = document.querySelector("#sslczPayBtn");
+    sslczPayBtn.addEventListener('click', (event) => {
+        if (!isLogin) {
+            window.location.href = "{{route('login')}}"
+        }
+    })
+</script>
+<script>
+    var obj = {};
+    obj.productId = {{$data->id}};
+    obj.productType = "{{$data->category->title}}";
+    obj.url = "event-details";
+
+    $('#sslczPayBtn').prop('postdata', obj);
+
+    (function (window, document) {
+        var loader = function () {
+            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+            // script.src = "https://seamless-epay.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR LIVE
+            script.src = "{{config('sslcommerz.sslCmmerzJs')}}?" + Math.random().toString(36).substring(7); // USE THIS FOR SANDBOX
+            tag.parentNode.insertBefore(script, tag);
+        };
+
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+    })(window, document);
+</script>

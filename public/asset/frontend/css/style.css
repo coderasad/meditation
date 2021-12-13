@@ -1533,3 +1533,22 @@ img, svg {
 .treenayana-img:nth-child(3n+3) .image-box:nth-child(3){
     height: 345px;
 }
+button#sslczPayBtn {
+    display: block !important;
+    width: 243px !important;
+    height: 49px !important;
+    line-height: 4.9rem !important;
+    color: #000000 !important;
+    background-color: #FFF !important;
+    border: 1px solid #000 !important;
+    position: unset !important;
+    padding: unset !important;
+    text-transform: unset !important;
+    font-size: 2rem !important;
+    border-radius: unset;
+}
+
+button#sslczPayBtn:hover {
+    background: #B6A75B !important;
+    color: #FFFFFF !important;
+}
