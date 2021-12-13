@@ -1541,7 +1541,6 @@ button#sslczPayBtn {
     color: #000000 !important;
     background-color: #FFF !important;
     border: 1px solid #000 !important;
-    position: unset !important;
     padding: unset !important;
     text-transform: unset !important;
     font-size: 2rem !important;

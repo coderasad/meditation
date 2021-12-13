@@ -44,6 +44,7 @@ s@php(!auth()->check() ? session()->put('url.intended', url()->full()) : false)
 </script>
 <script>
     var obj = {};
+    obj.user = {{auth()->id()}};
     obj.productId = {{$data->id}};
     obj.productType = "{{$data->category->title}}";
     obj.url = "event-details";

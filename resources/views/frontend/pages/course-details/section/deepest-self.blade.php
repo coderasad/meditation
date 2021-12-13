@@ -68,6 +68,7 @@
 </script>
 <script>
     var obj = {};
+    obj.user = {{auth()->id()}};
     obj.productId = {{$data->id}};
     obj.productType = "{{$data->category->title}}";
     obj.url = "session-details";
