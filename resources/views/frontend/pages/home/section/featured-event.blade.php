@@ -1,6 +1,6 @@
 <section class="featured-events-section mt-5 pt-5" id="Events">
     <div class="container p-relative">
-        <div class="">
+        <div class="title-margin">
             <h2 class="ps-700 font-24 c00">Featured Events</h2>
         </div>
 
@@ -18,12 +18,19 @@
                                 <div class="event-date-titme d-flex justify-content-between">
                                 </div>
                                 <div class="event-desc-1 ">
-                                    <h4 class="ps-700 s22 c00">{{  $featured_event->event->title }}</h4>
-                                    <p class="ps-400 s14 c6a height-50">{{  substr($featured_event->event->description, 0, 80)  }} {{strlen($featured_event->event->description) > 80 ? '...':''}}</p>
-                                    <a href="{{ url('event-details', $featured_event->event->id) }}"
-                                       class="ps-700 s16 cb6">More...</a>
+                                    <h4 class="ps-700 s22 c00 mb-3">{{  $featured_event->event->title }}</h4>
+                                    <p class="ps-400 s16 c6a height-50 mb-4">
+{{--                                        {{Str::limit($featured_event->event->description,80000)}}--}}
+                                        {{Str::limit($featured_event->event->description, 80, '')}}
+                                   <span>
+                                       @if(strlen($featured_event->event->description) >80)
+                                        <a href="{{ url('event-details', $featured_event->event->id) }}"
+                                           class="ps-700 s16 cb6">More...</a>
+                                       @endif
+                                   </span>
+                                    </p>
                                 </div>
-                                <div class="event-desc event-desc-1">
+                                <div class="event-desc-1">
                                     <a href="{{ url('event-details', $featured_event->event->id) }}"
                                        class="ps-700 s18 cff tc mx-auto d-block">Join</a>
                                 </div>

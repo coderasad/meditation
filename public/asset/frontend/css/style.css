@@ -35,10 +35,12 @@ Basic Setup
     background: #FD7319;
     height: 6rem;
 }
-h1,h2,h3,h4,h5,h6,p{
+
+h1, h2, h3, h4, h5, h6, p {
     padding: 0;
     margin: 0;
 }
+
 a,
 span,
 label {
@@ -68,9 +70,11 @@ textarea {
 .btn:focus {
     box-shadow: 0 0 0 0.1rem rgb(13 110 253 / 25%);
 }
-.object-fit-cover{
+
+.object-fit-cover {
     object-fit: cover;
 }
+
 button[type="submit"],
 button[type="reset"],
 button[type="button"] {
@@ -131,7 +135,8 @@ Start Hero Section
     letter-spacing: .3rem;
     line-height: 1.3;
 }
-.hero-section1{
+
+.hero-section1 {
     margin-top: 96px;
     height: 485px;
     position: relative;
@@ -156,12 +161,13 @@ Start Hero Section
     z-index: 2;
 }
 
-.hero-section1 .carousel-caption p{
+.hero-section1 .carousel-caption p {
     font-family: 'Italianno-400', serif;
     font-size: 60px;
     line-height: 60px;
     max-width: 695px;
 }
+
 .hero-section1 .carousel-indicators {
     margin-bottom: -20px;
 }
@@ -169,6 +175,7 @@ Start Hero Section
 .hero-section1 .carousel-indicators [data-bs-target] {
     background-color: rgba(196, 196, 196, 1);
 }
+
 .hero-section1 .main-menu {
     position: absolute;
     top: 0;
@@ -220,7 +227,7 @@ Start Event Section
 }
 
 .event-content {
-    padding: 0 3rem 1.5rem;
+    padding: 2.4rem 3rem 3rem;
 }
 
 .event-name {
@@ -251,7 +258,7 @@ Start Event Section
 }
 
 .swiper-container {
-    padding-bottom: 7rem;
+    /*padding-bottom: 7rem;*/
 }
 
 /*
@@ -270,17 +277,31 @@ Start Testimonial Section
     padding-bottom: 3rem;
 }
 
+.testimonial-img {
+    height: 83px;
+    width: 83px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 2.7rem;
+    background: rgba(196, 196, 196, 1);
+}
+
+.testimonial-section hr {
+    width: 168px;
+    margin: 0 auto 15px ;
+    color: rgba(0, 0, 0, 1);
+    opacity: 1;
+}
+
 .testimonial-title {
-    margin-bottom: 4rem;
+    margin-bottom: 6.2rem;
 }
 
 .testimonial-content {
-    padding-left: 8rem;
-    padding-right: 5rem;
+    padding: 0 2rem;
 }
 
 .client-fidback {
-    position: relative;
     max-width: 50rem;
     padding: 6rem 6rem 4rem;
     position: absolute;
@@ -428,6 +449,7 @@ Start Featured Page & Featured Events Section Styele
 
 .swiper-container3 {
     padding-bottom: 6rem;
+    border-radius: 10px;
 }
 
 .featured-events .featured-events-content {
@@ -1240,15 +1262,17 @@ Back To Top Btn
     width: 34px;
     height: 34px;
     border-radius: 4px;
-    padding: 0 ;
+    padding: 0;
     -webkit-animation: myBtn 3.5s infinite linear;
     animation: myBtn 3.5s infinite linear;
 }
-#up__btn img{
+
+#up__btn img {
     width: 12px;
     height: 16px;
     margin: 0 auto;
 }
+
 #up__btn:hover {
     -webkit-transform: translateY(-.7rem);
     -ms-transform: translateY(-.7rem);
@@ -1311,23 +1335,22 @@ Back To Top Btn
 
 /*developer css*/
 
-
-.courses-img .img, .session-img img, .event-img img, .featured-events-img img {
-
+.event-img.tr{
     height: 207px;
-    width: 100%;
     border-radius: 10px;
+    overflow: hidden;
+}
 
+.courses-img .img,
+.session-img img,
+.event-img img,
+.featured-events-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* start Testimonials */
-
-
-.testimonial-img .img {
-    width: 80px;
-    border-radius: 50%;
-    height: 80px;
-}
 
 .testimonial-text {
     height: 90px;
@@ -1391,6 +1414,7 @@ Back To Top Btn
 .header-nav-menu li {
     margin-right: 40px;
 }
+
 .header-nav-menu li a.active {
     color: #B6A75B !important;
 }
@@ -1412,6 +1436,7 @@ Back To Top Btn
     margin: 30px;
     width: auto !important;
 }
+
 img, svg {
     vertical-align: super;
 }
@@ -1458,10 +1483,6 @@ img, svg {
 
 .events-details-text p {
     margin: 3rem 0 3rem;
-}
-
-.event .img {
-    height: 207px !important;
 }
 
 .date-content {
