@@ -13,8 +13,9 @@
                             <div class="event-img tr position-relative">
                                 <img src="{{ asset($featured_event->event->image) }}" alt="featured events"
                                      class="img">
-                                <div class="label position-absolute live">LIve Now</div>
-{{--                                <div class="label position-absolute time">Mon - 07:00 pm</div>--}}
+                                {{--time or live--}}
+                                <div class="label position-absolute {{ $featured_event->event->category_id==1 ? 'live' : 'time'}}">{{ $featured_event->event->category_id==1 ? 'LIve Now' : 'Mon - 07:00 pm'}}</div>
+                                {{-- <div class="label position-absolute time">Mon - 07:00 pm</div>--}}
                             </div>
                             <div class="event-content">
                                 <div class="event-date-titme d-flex justify-content-between">
@@ -23,11 +24,11 @@
                                     <h4 class="ps-700 s22 c00 mb-3">{{  $featured_event->event->title }}</h4>
                                     <p class="ps-400 s16 c6a height-50 mb-4">
                                         {{Str::limit($featured_event->event->description, 80, '')}}
-                                   <span>
+                                        <span>
                                        @if(strlen($featured_event->event->description) >80)
-                                        <a href="{{ url('event-details', $featured_event->event->id) }}"
-                                           class="ps-700 s16 cb6">More...</a>
-                                       @endif
+                                                <a href="{{ url('event-details', $featured_event->event->id) }}"
+                                                   class="ps-700 s16 cb6">More...</a>
+                                            @endif
                                    </span>
                                     </p>
                                 </div>
