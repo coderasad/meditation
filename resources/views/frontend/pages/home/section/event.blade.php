@@ -1,7 +1,7 @@
 @if(count($upcoming_events) > 0)
     <section class="event-section d-none d-sm-block mb-4">
         <div class="container p-relative">
-            <div class="event-title">
+            <div class="title-margin">
                 <h2 class="ps-700 font-24 c00">Upcoming Event</h2>
             </div>
             <div class="swiper-container  swiper-container3">
@@ -25,9 +25,15 @@
                                         <h4 class="ps-700 s20 c00">{{ $upcoming_event->title }}</h4>
                                     </div>
                                     <div class="event-desc-1 height-70">
-                                        <p class="ps-400 s14 c6a">{{  substr($upcoming_event->description, 0, 80)  }} {{strlen($upcoming_event->description) > 80 ? '...':''}}</p>
-                                        <a href="{{ url('event-details', $upcoming_event->id) }}"
-                                           class="ps-700 s16 cb6">More...</a>
+                                        <p class="ps-400 s16 c6a height-50 mb-4">
+                                            {{Str::limit($upcoming_event->description, 80, '')}}
+                                            <span>
+                                                @if(strlen($upcoming_event->description) >80)
+                                                    <a href="{{ url('event-details', $upcoming_event->id) }}"
+                                                       class="ps-700 s16 cb6">More...</a>
+                                                @endif
+                                            </span>
+                                        </p>
                                     </div>
                                     <div class="event-desc event-desc-1">
                                         <a href="{{ url('event-details', $upcoming_event->id) }}"
@@ -41,7 +47,7 @@
             </div>
 
             <!-- Swiper Slider Prev Btn -->
-            <div class="swiper-btn courses-swiper-btn d-flex justify-content-between">
+            <div class="swiper-btn courses-swiper-btn d-flex justify-content-between d-none">
                 <button type="button" class="circle d-flex justify-content-center align-items-center swiper-prev-3">
                     <img src="{{ asset('') }}asset/frontend/svg-icon/arrow-left.svg" alt="arrow right" class="">
                 </button>

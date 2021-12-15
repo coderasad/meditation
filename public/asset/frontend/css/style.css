@@ -242,12 +242,12 @@ Start Event Section
     margin-top: 2.4rem;
 }
 
-.event-desc a {
+/*.event-desc a {
     width: 16.8rem;
     min-height: 4.3rem;
     line-height: 4.3rem;
     background: #B6A75B;
-}
+}*/
 
 .event-desc {
     display: none;
@@ -357,7 +357,10 @@ Start Courses Page & Courses Section Style
 =============================================
 */
 .courses-section {
-    padding-bottom: 1.5rem;
+    min-height: 570px;
+}
+.courses-section .swiper-slide{
+    min-height: 385px;
 }
 
 .courses-title {

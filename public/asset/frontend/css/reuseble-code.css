@@ -502,7 +502,7 @@ footer {
     -ms-transform: translateY(-57%);
     transform: translateY(-57%);
     width: 100%;
-    z-index: 99;
+    /*z-index: 99;*/
 }
 
 .swiper-btn button {
@@ -704,4 +704,28 @@ footer {
 }
 .event{
     border-radius: 10px;
+}
+.event-section .event-img.tr{
+    width: 70%;
+    height: 228px;
+    margin-left: auto;
+}
+.event-section{
+    min-height: 620px;
+}
+.featured-events-section .label{
+    left: 8px;
+    bottom: 8px;
+    font-size: 14px;
+    padding: 4px 20px;
+    color: #fff;
+    font-weight: 700;
+    background: #FD7319;
+    font-family: 'Product-Sans-700';
+}
+.featured-events-section .live{
+    background: #FD7319;
+}
+.featured-events-section .time{
+    background: #000;
 }

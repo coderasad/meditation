@@ -1,9 +1,8 @@
-<section class="courses-section d-none d-sm-block mt-5 pt-5" id="Courses">
+<section class="courses-section d-none d-sm-block pt-4" id="Courses">
     <div class="container p-relative">
-        <div class="">
+        <div class="title-margin">
             <h2 class="ps-700 font-24 c00">Our Courses</h2>
         </div>
-
 
         <div class="swiper-container  swiper-container1">
             <div class="swiper-wrapper swiper-slide-pb">
@@ -18,9 +17,16 @@
                                 </div>
                                 <div class="event-desc-1 ">
                                     <h4 class="ps-700 s22 c00">{{ $course->title }}</h4>
-                                    <p class="ps-400 s14 c6a height-50">{{  substr($course->description, 0, 80)  }} {{strlen($course->description) > 80 ? '...':''}}</p>
-                                    <a href="{{ url('course-details', $course->id) }}"
-                                       class="ps-700 s16 cb6">More...</a>
+                                    <p class="ps-400 s16 c6a height-50 mb-4">
+                                        {{Str::limit($course->description, 80, '')}}
+                                        <span>
+                                            @if(strlen($course->description) >80)
+                                                <a href="{{ url('course-details', $course->id) }}"
+                                                   class="ps-700 s16 cb6">More...</a>
+                                            @endif
+                                        </span>
+                                    </p>
+
                                 </div>
                                 <div class="event-desc event-desc-1">
                                     <a href="{{ url('course-details', $course->id) }}"

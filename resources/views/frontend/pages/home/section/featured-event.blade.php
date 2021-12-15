@@ -1,4 +1,4 @@
-<section class="featured-events-section mt-5 pt-5" id="Events">
+<section class="featured-events-section pt-4" id="Events">
     <div class="container p-relative">
         <div class="title-margin">
             <h2 class="ps-700 font-24 c00">Featured Events</h2>
@@ -10,9 +10,11 @@
                 @foreach ($featured_events as $featured_event)
                     <div class="swiper-slide">
                         <div class="event shadow-2">
-                            <div class="event-img tr">
+                            <div class="event-img tr position-relative">
                                 <img src="{{ asset($featured_event->event->image) }}" alt="featured events"
                                      class="img">
+                                <div class="label position-absolute live">LIve Now</div>
+{{--                                <div class="label position-absolute time">Mon - 07:00 pm</div>--}}
                             </div>
                             <div class="event-content">
                                 <div class="event-date-titme d-flex justify-content-between">
@@ -20,7 +22,6 @@
                                 <div class="event-desc-1 ">
                                     <h4 class="ps-700 s22 c00 mb-3">{{  $featured_event->event->title }}</h4>
                                     <p class="ps-400 s16 c6a height-50 mb-4">
-{{--                                        {{Str::limit($featured_event->event->description,80000)}}--}}
                                         {{Str::limit($featured_event->event->description, 80, '')}}
                                    <span>
                                        @if(strlen($featured_event->event->description) >80)
