@@ -13,9 +13,8 @@
                             <div class="event-img tr position-relative">
                                 <img src="{{ asset($featured_event->event->image) }}" alt="featured events"
                                      class="img">
-                                {{--time or live--}}
-                                <div class="label position-absolute {{ $featured_event->event->category_id==1 ? 'live' : 'time'}}">{{ $featured_event->event->category_id==1 ? 'LIve Now' : 'Mon - 07:00 pm'}}</div>
-                                {{-- <div class="label position-absolute time">Mon - 07:00 pm</div>--}}
+                                <div
+                                    class="label position-absolute {{ $featured_event->event->category_id==1 ? 'live' : 'time'}}">{{ $featured_event->event->category_id==1 ? 'LIve Now' : 'Mon - 07:00 pm'}}</div>
                             </div>
                             <div class="event-content">
                                 <div class="event-date-titme d-flex justify-content-between">
