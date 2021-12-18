@@ -11,8 +11,8 @@ class EventController extends Controller
 {
     public function index()
     {
-        $all_events = Event::where('category',1)->paginate(9);
-        $upcoming_events = Event::where('category',1)->whereDate('starting_date', ">=", date("Y-m-d"))
+        $all_events = Event::where('category_id',1)->paginate(9);
+        $upcoming_events = Event::where('category_id',1)->whereDate('starting_date', ">=", date("Y-m-d"))
             ->where('category_id', 1)
             ->orderBy('id', 'DESC')
             ->limit(3)

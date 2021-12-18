@@ -2,9 +2,12 @@
     <div class="container">
         <div class="tab__area">
             <!---- TAB BTN ---->
-            <div class="tab d-flex">
-                <button type="button" class="tablinks tc ps-700 images" onclick="openCity(event, 'London')" id="defaultOpen">Images</button>
-                <button type="button" class="tablinks tc ps-700 videos" onclick="openCity(event, 'Paris')">Videos</button>
+            <div class="tab d-flex justify-content-center ">
+                <button type="button" class="tablinks tc ps-700 images" onclick="openCity(event, 'London')"
+                        id="defaultOpen">Images
+                </button>
+                <button type="button" class="tablinks tc ps-700 videos" onclick="openCity(event, 'Paris')">Videos
+                </button>
             </div>
 
             <!-------- TAB CONTENT -------->
@@ -27,20 +30,104 @@
                             <button type="button" class="ps-700 c00 s18" data-filter=".Shower">Shower</button>
                             <button type="button" class="ps-700 c00 s18" data-filter=".Locker">Locker</button>
                         </div> --}}
-                        <div class="row g-5 mix-filter">
-                            @foreach ($gallaries as $gallary)
+                        <div class="row mix-filter-gerray">
+                            {{--@foreach ($gallaries as $gallary)
                                 <div class="col-sm-4">
                                     <div class="row g-5">
                                         <div class="col-12 mix treenayana-img Therapy Shower ">
                                             <div class="ga-img treenayana-img">
-                                                <img cla src="{{ asset($gallary->image) }}" alt="gallary" class="img image-box">
+                                                <img cla src="{{ asset($gallary->image) }}" alt="gallary"
+                                                     class="img image-box">
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
-                            @endforeach
+                            @endforeach--}}
+                            <div class="col-sm-4">
+                                <div class="image-box">
+                                    <img
+                                        src="http://127.0.0.1:8000/uploads/images/gallary/ccd546d4785e3259500dd6b88426a5cc.jpeg"
+                                        alt="gallary"
+                                        class="img">
+                                    <p>The suspicion these what did and maintain will made produce the train mountain,
+                                        indeed her each become of managers..</p>
+                                </div>
+                                <div class="image-box">
+                                    <img
+                                        src="http://127.0.0.1:8000/uploads/images/gallary/ccd546d4785e3259500dd6b88426a5cc.jpeg"
+                                        alt="gallary"
+                                        class="img">
+                                    <p>The suspicion these what did and maintain will made produce the train mountain,
+                                        indeed her each become of managers..</p>
+                                </div>
 
+                                <div class="image-box">
+                                    <img
+                                        src="http://127.0.0.1:8000/uploads/images/gallary/ccd546d4785e3259500dd6b88426a5cc.jpeg"
+                                        alt="gallary"
+                                        class="img">
+                                    <p>The suspicion these what did and maintain will made produce the train mountain,
+                                        indeed her each become of managers..</p>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="image-box">
+                                    <img
+                                        src="http://127.0.0.1:8000/uploads/images/gallary/ccd546d4785e3259500dd6b88426a5cc.jpeg"
+                                        alt="gallary"
+                                        class="img">
+                                    <p>The suspicion these what did and maintain will made produce the train mountain,
+                                        indeed her each become of managers..</p>
+                                </div>
+                                <div class="image-box">
+                                    <img
+                                        src="http://127.0.0.1:8000/uploads/images/gallary/ccd546d4785e3259500dd6b88426a5cc.jpeg"
+                                        alt="gallary"
+                                        class="img">
+                                    <p>The suspicion these what did and maintain will made produce the train mountain,
+                                        indeed her each become of managers..</p>
+                                </div>
+
+                                <div class="image-box">
+                                    <img
+                                        src="http://127.0.0.1:8000/uploads/images/gallary/ccd546d4785e3259500dd6b88426a5cc.jpeg"
+                                        alt="gallary"
+                                        class="img">
+                                    <p>The suspicion these what did and maintain will made produce the train mountain,
+                                        indeed her each become of managers..</p>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="image-box">
+                                    <img
+                                        src="http://127.0.0.1:8000/uploads/images/gallary/ccd546d4785e3259500dd6b88426a5cc.jpeg"
+                                        alt="gallary"
+                                        class="img">
+                                    <p>The suspicion these what did and maintain will made produce the train mountain,
+                                        indeed her each become of managers..</p>
+                                </div>
+                                <div class="image-box">
+                                    <img
+                                        src="http://127.0.0.1:8000/uploads/images/gallary/ccd546d4785e3259500dd6b88426a5cc.jpeg"
+                                        alt="gallary"
+                                        class="img">
+                                    <p>The suspicion these what did and maintain will made produce the train mountain,
+                                        indeed her each become of managers..</p>
+                                </div>
+
+                                <div class="image-box">
+                                    <img
+                                        src="http://127.0.0.1:8000/uploads/images/gallary/ccd546d4785e3259500dd6b88426a5cc.jpeg"
+                                        alt="gallary"
+                                        class="img">
+                                    <p>The suspicion these what did and maintain will made produce the train mountain,
+                                        indeed her each become of managers..</p>
+                                </div>
+
+                            </div>
                             {{-- <div class="col-sm-4">
                                 <div class="row g-5">
                                     <div class="col-12 mix Locker">
@@ -88,7 +175,7 @@
                         </div>
                     </div>
 
-                    {{-- <!-------- TAB CONTENT-2 -------->
+                    {{--  <!-------- TAB CONTENT-2 -------->
                     <div class="b-tab" id="tab2">
                         <div class="row g-5">
                             <div class="col-sm-4">
@@ -218,37 +305,46 @@
                         </div>
                     </div>
                 </div> --}}
-            </div>
-        </div>
-
-        <!-------- TAB CONTENT -------->
-        <div id="Paris" class="tabcontent gallary-tab-video">
-            <div class="row g-5">
-                <div class="col-md-8 col-sm-6">
-                    <div class="gallary-video">
-                        <iframe width="100%" height="165" src="https://www.youtube.com/embed/{{ $firstVideo->video }}"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-end">
-                        <p class="ps-400 s12 c86">{{ $firstVideo->text }}</p>
-                    </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
-                    @foreach ($videos as $key=>$video)
+            </div>
+
+            <!-------- TAB CONTENT -------->
+            <div id="Paris" class="tabcontent gallary-tab-video">
+                <div class="row g-5">
+                    <div class="col-md-8 col-sm-6">
                         <div class="gallary-video">
-                            <iframe width="100%" height="165" src="https://www.youtube.com/embed/{{ $video->video }}"
+                            <iframe width="100%" height="487"
+                                    src="https://www.youtube.com/embed/{{ $firstVideo->video }}"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
                         </div>
-                        <div class="d-flex justify-content-between align-items-end">
-                            <p class="ps-400 s12 c86">{{ $video->text }}</p>
+                        <div class="d-d-flex flex-column video-text">
+                            {{--                            <p class="ps-400 s12 c86">{{ $firstVideo->text }}</p>--}}
+                            <h3>Abandon he myself and with this</h3>
+                            <h4>With Jone smith</h4>
+                            <p class="ps-400 s12 c86">The suspicion these what did and maintain will made produce the
+                                train mountain, indeed her each become of managers. This guide, we’ll explore the key of
+                                website usability. We’ll cover what it is and how it relates to.</p>
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        @foreach ($videos as $key=>$video)
+                            <div class="gallary-video mb-0">
+                                <iframe width="100%" height="207"
+                                        src="https://www.youtube.com/embed/{{ $video->video }}"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                            </div>
+                            <div class="d-flex justify-content-between p-3 mb-5 video-title-time">
+{{--                                <p class="ps-400 s12 c86">{{ $video->text }}</p>--}}
+                                <p class="ps-400 s12 c86">Abandon he myself and with this</p>
+                                <p class="ps-400 s12 c86">4:00</p>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>

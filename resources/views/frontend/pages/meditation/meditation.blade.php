@@ -18,13 +18,11 @@
     @foreach ($data as $row)
         <section class="gellary-section mt-5">
             <div class="container">
-
-                <div class="pb-3">
+                <div class="title-margin">
                     <h2 class="ps-700 font-24 c00">{{ $row->title }}</h2>
                 </div>
                 <div class="row gx-4 gy-5 mix-filter p-relative">
-
-                    <div class="swiper-container  meditation-container{{$row->id}}">
+                    <div class="swiper-container pb-5 meditation-container{{$row->id}}">
                         <div class="swiper-wrapper swiper-slide-pb">
                             @foreach ($row->meditations as $course)
                                 <div class="swiper-slide">
@@ -35,10 +33,16 @@
                                         <div class="event-content">
                                             <div class="event-date-titme d-flex justify-content-between">
                                             </div>
-                                            <div class="event-desc-1 ">
+                                            <div class="event-desc-1 custom-p">
                                                 <h4 class="ps-700 s22 c00">{{ $course->title }}</h4>
-                                                <p class="ps-400 s14 c6a height-50">{!! substr($course->description, 0, 80)  !!} {!! strlen($course->description) > 80 ? '...':''!!}</p>
-
+                                                    {!!  Str::limit($course->description, 80, '') !!}
+                                                    <span>
+                                                        @if(Str::limit($course->description) >80)
+                                                            <a href="{{ url('event-details', $course->id) }}"
+                                                               class="ps-700 s16 cb6">More...</a>
+                                                        @endif
+                                                    </span>
+{{--                                                <p class="ps-400 s14 c6a height-50">{!! substr($course->description, 0, 80)  !!} {!! strlen($course->description) > 80 ? '...':''!!}</p>--}}
                                             </div>
                                             <div class="event-desc-1">
                                                 <a href="{{ url('meditation-details', $course->id) }}"
@@ -72,7 +76,7 @@
                 spaceBetween: 20,
                 loop: true,
                 autoplay: {
-                    delay: 3000,
+                    delay: 30000,
                     disableOnInteraction: false,
                 },
                 navigation: {
@@ -96,4 +100,5 @@
             });
         </script>
     @endforeach
+    <div class="pb-70"></div>
 @endsection

@@ -1,7 +1,7 @@
-<section class="gellary-section py-100">
+<section class="gellary-section py-70">
     <div class="container p-relative">
 
-        <div class="pb-3">
+        <div class="title-margin">
             <h2 class="ps-700 font-24 c00">Online Course</h2>
         </div>
         <div class="row gx-4 gy-5 mix-filter">
@@ -19,8 +19,16 @@
                                     </div>
                                     <div class="event-desc-1 ">
                                         <h4 class="ps-700 s22 c00">{{ $course->event->title }}</h4>
-                                        <p class="ps-400 s14 c6a height-50">{{  substr($course->event->description, 0, 80)  }} {{strlen($course->event->description) > 80 ? '...':''}}</p>
 
+                                        <p class="ps-400 s16 c6a height-50 mb-4">
+                                            {{Str::limit($course->event->description, 80, '')}}
+                                            <span>
+                                                @if(strlen($course->event->description) >80)
+                                                    <a href="{{ url('event-details', $course->event->id) }}"
+                                                       class="ps-700 s16 cb6">More...</a>
+                                                @endif
+                                            </span>
+                                        </p>
                                     </div>
                                     <div class="event-desc-1">
                                         <a href="{{ url('course-details', $course->event->id) }}"
@@ -44,7 +52,7 @@
         </div>
     </div>
     <div class="container p-relative">
-        <div class="pb-3">
+        <div class="title-margin">
             <h2 class="ps-700 font-24 c00">Onsite Course</h2>
         </div>
         <div class="row gx-4 gy-5 mix-filter">

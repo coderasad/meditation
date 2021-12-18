@@ -419,7 +419,7 @@ Start Session Page & Session Section Style
 }
 
 .session .session-content {
-    padding: .5rem 2.7rem 2.7rem
+    padding: 1.5rem 3rem 2rem
 }
 
 .session-content .session-m-r ul li:first-child {
@@ -429,12 +429,17 @@ Start Session Page & Session Section Style
 .session-desc {
     margin: .5rem 0 2rem;
 }
+.session,
+.featured-events
+{
+    border-radius: 10px;
+}
 
-/*
-=============================================
-End Session Page & Session Section Style
-=============================================
-*/
+    /*
+    =============================================
+    End Session Page & Session Section Style
+    =============================================
+    */
 
 
 /*
@@ -456,7 +461,7 @@ Start Featured Page & Featured Events Section Styele
 }
 
 .featured-events .featured-events-content {
-    padding: .5rem 2.7rem 2.7rem
+    padding: 1.5rem 3rem 2rem
 }
 
 .featured-events-img .fe-live-date {
@@ -474,10 +479,6 @@ Start Featured Page & Featured Events Section Styele
 
 .featured-events-desc p {
     margin: .5rem 0 2.3rem;
-}
-
-.featured-events {
-    margin-top: 1rem;
 }
 
 /*
@@ -504,12 +505,13 @@ Start Reuseble Style
 
 .cd-title h2,
 .sd-title h2 {
-    margin: .6rem 0 1rem;
+    margin-bottom: 20px;
 }
 
 .cd-img,
 .sd-img {
-    margin: 2rem 0 4.3rem;
+    /*margin: 3.6rem 0 4.3rem;**/
+    margin: 2rem 0 4rem;
 }
 
 .cd-btn,
@@ -567,7 +569,6 @@ Start Course Details Page Style
 
 .cd-follow-desc {
     margin-top: 1.8rem;
-    padding-left: 4rem;
 }
 
 .cd-hr {
@@ -628,11 +629,6 @@ Events Details Page Style Here
 .events-details-text h3 {
     margin-top: 1rem;
 }
-
-.events-details-text p {
-    margin: 3rem 0 4.5rem;
-}
-
 
 /*===============================================================================
 =================================================================================
@@ -725,6 +721,36 @@ Gallary Page Style Here
 
 .gallary-video {
     margin-bottom: 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    display: block;
+}
+.video-text h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 1);
+    margin-bottom: 8px;
+    margin-top: 35px;
+}
+.video-text h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: rgba(130, 130, 130, 1);
+    margin-bottom: 20px;
+}
+.video-text p {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(96, 96, 96, 1);
+    margin-bottom: 20px;
+}
+.video-title-time{
+    background: #FFFFFF;
+    box-shadow: 0px 16px 43px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+}
+.gallary-video iframe {
+    display: block;
 }
 
 /*===============================================================================
@@ -986,7 +1012,6 @@ SignIn & SignUp Page Style Here
 }
 
 .signup-img-main {
-    height: 105rem !important;
     -o-object-fit: cover;
     object-fit: cover;
 }
@@ -1031,16 +1056,12 @@ SignIn & SignUp Page Style Here
     max-width: 42.6rem;
 }
 
-.sign-content > p {
-    margin: 1rem 0 5rem;
-}
-
 .sign-form:not(:last-child) {
-    margin-bottom: 3rem;
+    margin-bottom: 2.2rem;
 }
 
 .sign-form label {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .sign-form > input,
@@ -1107,11 +1128,27 @@ SignIn & SignUp Page Style Here
     cursor: pointer;
 }
 
-.sign-btn input {
-    background: #B6A75B;
-    border: 0;
+.sign-btn {
     cursor: pointer;
+    width: 168px;
+    height: 43px;
+    margin: 0 auto;
+}
+.sign-form .submit-button{
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgba(134, 146, 166, 1);
+    line-height: 100%;
     padding: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    color:rgba(105, 111, 121, 1);
+    transition: all .5s;
+}
+form .submit-button:hover{
+    color: #fff;
+    background: rgba(182, 167, 91, 1)
 }
 
 .sign-content .or-text {
@@ -1152,9 +1189,6 @@ SignIn & SignUp Page Style Here
     margin-right: 1.5rem;
 }
 
-.sign-content .c-new-acc {
-    margin-top: 5.2rem;
-}
 
 .sign-content .c-new-acc a {
     text-decoration: underline !important;
@@ -1247,6 +1281,17 @@ SignIn & SignUp Page Style Here
 
 .contact-content p:last-child a {
     text-decoration: underline !important;
+}
+.social-icon a{
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ABABAB;;
+    margin-right: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
 }
 
 /*
@@ -1344,6 +1389,14 @@ Back To Top Btn
     overflow: hidden;
 }
 
+.session-img,
+.featured-events-img
+{
+    height: 207px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .courses-img .img,
 .session-img img,
 .event-img img,
@@ -1351,6 +1404,7 @@ Back To Top Btn
     height: 100%;
     width: 100%;
     object-fit: cover;
+    display: block;
 }
 
 /* start Testimonials */
@@ -1468,7 +1522,8 @@ img, svg {
     background-color: #FFFFFF;
     color: #000000 !important;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 32px;
 }
 
 /* End Home Page */
@@ -1485,15 +1540,16 @@ img, svg {
 }
 
 .events-details-text p {
-    margin: 3rem 0 3rem;
+    margin-bottom: 1.3rem;
 }
 
 .date-content {
-    width: 142px;
+    /*width: 142px;**/
     height: 22px;
     font-size: 18px;
     line-height: 22px;
     color: #2C2C2C;
+    margin-bottom: 10px;
 }
 
 .contribution-fee-content {
@@ -1507,23 +1563,29 @@ img, svg {
     color: #474747 !important;
 }
 
-.cd-img img {
-    max-height: 423px;
+.cd-img {
+    height: 423px;
+}
+
+.sd-img {
+    height: 423px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .sd-img .img {
     width: 100%;
-    height: 423px;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Gallary */
 .gellary-section .images {
     width: 134px;
     height: 43px;
-    line-height: 4.9rem;
+    line-height: 4.3rem;
     /* color: #000000 !important;*/
     background-color: #FFF !important;
-    margin-left: 500px;
     margin-top: 40px;
     text-transform: none;
 }
@@ -1531,11 +1593,9 @@ img, svg {
 .gellary-section .videos {
     width: 134px;
     height: 43px;
-    line-height: 4.9rem;
+    line-height: 4.3rem;
     /* color: #000000 !important; */
     background-color: #FFF !important;
-
-    margin-left: 64px;
     margin-top: 40px;
     text-transform: none;
 }
@@ -1555,6 +1615,77 @@ img, svg {
     background-color: #FFF;
     border: 1px solid #000;
 }
+
+/*missionary*/
+.mix-filter-gerray .image-box img{
+    height: 100%;
+    object-fit: cover;
+}
+.image-box {
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.image-box:hover p {
+    bottom: 15px;
+    opacity: 1;
+
+}
+.mix-filter-gerray p{
+    font-size: 16px!important;
+    position: absolute;
+    bottom: 0;
+    background: #ffffff26;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 10px;
+    color: #fff;
+    transition: all .5s;
+    opacity: 0;
+}
+.mix-filter-gerray .col-sm-4:nth-child(3n+1) .image-box:nth-child(1){
+    height: 339px;
+}
+
+.mix-filter-gerray .col-sm-4:nth-child(3n+1) .image-box:nth-child(2){
+    height: 205px;
+}
+
+.mix-filter-gerray .col-sm-4:nth-child(3n+1) .image-box:nth-child(3){
+    height: 430px;
+}
+
+
+/*/ col-two /*/
+.mix-filter-gerray .col-sm-4:nth-child(3n+2) .image-box:nth-child(1){
+    height: 477px;
+}
+
+.mix-filter-gerray .col-sm-4:nth-child(3n+2) .image-box:nth-child(2){
+    height: 286px;
+}
+
+.mix-filter-gerray .col-sm-4:nth-child(3n+2) .image-box:nth-child(3){
+    height: 206px;
+}
+
+/*col-three*/
+.mix-filter-gerray .col-sm-4:nth-child(3n+3) .image-box:nth-child(1){
+    height: 289px;
+}
+
+.mix-filter-gerray .col-sm-4:nth-child(3n+3) .image-box:nth-child(2){
+    height: 338px;
+}
+
+.mix-filter-gerray .col-sm-4:nth-child(3n+3) .image-box:nth-child(3){
+    height: 345px;
+}
+
+
+
+
 
 /* End Gallary */
 

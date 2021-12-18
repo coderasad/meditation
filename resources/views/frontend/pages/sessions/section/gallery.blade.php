@@ -1,11 +1,11 @@
-<section class="gellary-section py-100">
+<section class="gellary-section py-70">
     <div class="container">
 
         <div class="row gx-4 gy-5 mix-filter">
 
             @foreach ($all_data as $all_session)
             <div class="col-lg-4 col-sm-6 mix popular-sessions new-sessions">
-                <div class="session shadow-4 rounded-tt ">
+                <div class="session shadow-4">
                     <div class="session-img">
                         <img src="{{ asset($all_session->image) }}" alt="session" class="img">
                     </div>
@@ -20,7 +20,7 @@
                         </div>
                         <div class=" event-desc-1">
                             <a href="{{ url('session-details', $all_session->id) }}"
-                               class="ps-700 s18 cff tc mx-auto d-block">Join</a>
+                               class="ps-700 s16 color-main">More...</a>
                         </div>
                     </div>
                 </div>

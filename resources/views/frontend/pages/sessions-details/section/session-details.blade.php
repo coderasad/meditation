@@ -1,4 +1,4 @@
-<section class="sessions-details-section pt-100">
+<section class="sessions-details-section py-70">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-7">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 ms-lg-auto">
+            <div class="col-lg-5 ms-lg-auto pl-70">
                 <div class="row gy-4">
                     @foreach($related_data as $row)
                         <div class="col-lg-12 col-sm-6">
@@ -45,6 +45,6 @@
                 </div>
             </div>
         </div>
-        <hr class="cd-hr">
+{{--        <hr class="cd-hr">--}}
     </div>
 </section>
