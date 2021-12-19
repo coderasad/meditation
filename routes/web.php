@@ -20,6 +20,7 @@ Route::get('about', 'Frontend\AboutController@index');
 Route::get('body-yoga', 'Frontend\YogaController@index');
 Route::get('contact', 'Frontend\ContactController@index');
 Route::get('detox/{id}', 'Frontend\DetoxController@index');
+Route::get('detox', 'Frontend\DetoxController@detox'); //asad create detox route
 Route::get('events', 'Frontend\EventController@index');
 Route::get('event-details/{id}', 'Frontend\EventDetailsController@index');
 Route::get('focus/{id}', 'Frontend\FocuseController@index');

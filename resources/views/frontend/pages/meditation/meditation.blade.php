@@ -35,14 +35,13 @@
                                             </div>
                                             <div class="event-desc-1 custom-p">
                                                 <h4 class="ps-700 s22 c00">{{ $course->title }}</h4>
-                                                    {!!  Str::limit($course->description, 80, '') !!}
-                                                    <span>
+                                                {!!  Str::limit($course->description, 80, '') !!}
+                                                <span>
                                                         @if(Str::limit($course->description) >80)
-                                                            <a href="{{ url('event-details', $course->id) }}"
-                                                               class="ps-700 s16 cb6">More...</a>
-                                                        @endif
+                                                        <a href="{{ url('meditation-details', $course->id) }}"
+                                                           class="ps-700 s16 cb6">More...</a>
+                                                    @endif
                                                     </span>
-{{--                                                <p class="ps-400 s14 c6a height-50">{!! substr($course->description, 0, 80)  !!} {!! strlen($course->description) > 80 ? '...':''!!}</p>--}}
                                             </div>
                                             <div class="event-desc-1">
                                                 <a href="{{ url('meditation-details', $course->id) }}"
@@ -73,28 +72,28 @@
             // SLIDER COURSES
             var swiper = new Swiper('.meditation-container{{$row->id}}', {
                 slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                autoplay: {
-                    delay: 30000,
+                spaceBetween : 20,
+                loop         : true,
+                autoplay     : {
+                    delay               : 30000,
                     disableOnInteraction: false,
                 },
-                navigation: {
+                navigation   : {
                     nextEl: '.swiper-next-{{$row->id}}',
                     prevEl: '.swiper-prev-{{$row->id}}',
                 },
-                breakpoints: {
+                breakpoints  : {
                     576: {
                         slidesPerView: 2,
-                        spaceBetween: 20,
+                        spaceBetween : 20,
                     },
                     768: {
                         slidesPerView: 2,
-                        spaceBetween: 20,
+                        spaceBetween : 20,
                     },
                     992: {
                         slidesPerView: 3,
-                        spaceBetween: 20,
+                        spaceBetween : 20,
                     },
                 }
             });

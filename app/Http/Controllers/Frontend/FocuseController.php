@@ -7,7 +7,7 @@ use App\Models\MeditationType;
 use App\Models\MeditationVideo;
 use Illuminate\Http\Request;
 
-class FocuseController extends Controller
+class   FocuseController extends Controller
 {
     public function index($id){
         $data = MeditationType::where('id', $id)->first();

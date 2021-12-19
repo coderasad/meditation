@@ -1,4 +1,4 @@
-<section class="py-100">
+<section class="py-70">
     <div class="container">
         <div class="filtering-btn">
             <button type="button" class="ps-700 c00 s23" data-filter="all">All Products</button>
@@ -8,9 +8,9 @@
         </div>
         <div class="row gy-5 gx-4 mix-filter">
             <div class="col-lg-3 col-md-4 col-sm-6 mix books">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop1.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop1.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Meditaion Now</p>
@@ -19,9 +19,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix clothes">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop2.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop2.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Free Weave Cotton Scarf</p>
@@ -30,9 +30,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix others">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop3.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop3.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Meditaion Coiusn</p>
@@ -41,9 +41,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix books">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop4.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop4.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Good Morning Yoga</p>
@@ -52,9 +52,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix others">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop5.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop5.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Alpaca Wool Throw Blanket</p>
@@ -63,9 +63,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix others">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop6.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop6.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Pure Cashmere Prayer Shawl</p>
@@ -74,9 +74,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix clothes">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop7.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop7.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Traditional White Khata</p>
@@ -85,9 +85,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix clothes">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop8.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop8.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Alpaca Meditation Shawl, ivory</p>
@@ -96,9 +96,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix others">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop9.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop9.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Red Crystal Tibetan Incense</p>
@@ -107,9 +107,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix others">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop10.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop10.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Zen Gong with Wood Frame</p>
@@ -118,9 +118,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix others">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop11.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop11.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Fleece Meditation Cloak</p>
@@ -129,9 +129,9 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mix others">
-                <div class="shop shadow-3">
+                <div class="shop">
                     <div class="shop-img">
-                        <img src="{{ asset('') }}asset/frontend/images/shop12.png" alt="shop" class="img">
+                        <img src="{{ asset('') }}asset/frontend/images/shop12.png" alt="shop" class="w-100 h-100 object-fit-cover d-block">
                     </div>
                     <div class="shop-text tc">
                         <p class="ps-700 c00 s16">Ivory Altar Candles</p>

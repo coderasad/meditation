@@ -1,4 +1,4 @@
-<section class="py-100">
+<section class="py-70">
     <div class="container">
         <div class="w-870">
             <div class="detox-title">

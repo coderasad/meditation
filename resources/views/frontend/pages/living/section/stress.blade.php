@@ -1,4 +1,4 @@
-<section class="py-100">
+<section class="py-70">
     <div class="container">
         <div class="w-870 living-wrapper">
             <p class="ps-400 c00 s40">How To Turn Your Life Into A Living Meditation</p>

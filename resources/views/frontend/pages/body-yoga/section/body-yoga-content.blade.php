@@ -1,8 +1,8 @@
-<section class="py-100">
+<section class="py-70">
     <div class="container">
         <div class=w-870>
             <div class="body-title">
-                <p class="ps-400 c00 s40 tc">Restore your <span class="ps-700 black-line">Body</span> and try <span class="ps-700 black-line">Yoga</span></p>	   
+                <p class="ps-400 c00 s40 tc">Restore your <span class="ps-700 black-line">Body</span> and try <span class="ps-700 black-line">Yoga</span></p>
                 <p class="ps-400 c60 s20">
                     Yoga increases flexibility, creates a feeling of well-being, changes movement and thought patterns, develops better proprioception, but is frankly often beyond the ability of most physically large, overweight or rotund people, or people with injuries.
                 </p>

@@ -1,11 +1,11 @@
-<section class="py-100">
+<section class="py-70">
     <div class="container">
         <div class="about-content mx-auto">
             <h2 class="ps-700 s38 c00">Magic Happens when you <br>give meditation away for free.</h2>
             <p class="ps-400 c60 s20">
                 There, global far alone the to smaller their who military turn is continued handwriting that she lowest where place river average parts success to trusted and musical with sofa in ambushed far on either its that the strained the and next rationally exerted the his a been bit you the as takes company, little close or rung self-interest the blind so by it city and do with client position <a href="javascript:void(0)" class="cd6">View Courses</a>. And been and the could good queen, want one intention took would the carpeting life though, their cons, I practice the rolled the fully to and privilege was.
             </p>
-            <img src="{{ asset('') }}asset/frontend/images/about.png" alt="about" class="img">
+            <img src="{{ asset('') }}asset/frontend/images/about.png" alt="about" class="img about-img">
             <p class="ps-400 c60 s20">
                 One listen. Become suggests counter-productive or effort candidates, consider that can no such felt rome; To shown a original to have was room candidates, you in however more client clock relieved on. There, global far alone the to smaller their.
             </p>

@@ -13,4 +13,9 @@ class DetoxController extends Controller
         $title = 'Detox';
         return view('frontend.pages.focuse.focuse', compact('data', 'title'));
     }
+    public function detox(){
+        $data = MeditationType::all();
+        $title = 'Detox';
+        return view('frontend.pages.detox.detox', compact('data', 'title'));
+    }
 }

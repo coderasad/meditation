@@ -1,7 +1,7 @@
-<section class="py-100">
+<section class="py-5">
     <div class="container">
         <div class="sleep-title tc mx-auto">
-            <p class="ps-400 c00 s40">Improve your <span class="ps-700 black-line">Sleep</span></p>
+            <p class="ps-400 c00 s40 mb-3">Improve your <span class="ps-700 black-line">Sleep</span></p>
             <p class="ps-400 c60 s20">
                 Around one in three people suffer from mild insomnia. If you wake consistently at night or suffer from
                 restless sleep patterns, these sleep meditations, talks, and music tracks will help calm the mind and
@@ -19,7 +19,7 @@
                 @foreach($row->videos as $video)
                     <div class="col-lg-3 col-sm-6">
                         <div class="sleep-music-video">
-                            <iframe width="100%" height="165" src="https://www.youtube.com/embed/{{ $video->video }}"
+                            <iframe width="100%" height="168" src="https://www.youtube.com/embed/{{ $video->video }}"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
