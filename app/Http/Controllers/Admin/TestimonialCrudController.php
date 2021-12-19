@@ -39,13 +39,10 @@ class TestimonialCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
         CRUD::column('name');
         CRUD::column('title');
         CRUD::column('description');
         CRUD::column('image')->type('image');
-        CRUD::column('created_at');
-        CRUD::column('updated_at');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -64,13 +61,10 @@ class TestimonialCrudController extends CrudController
     {
         CRUD::setValidation(TestimonialRequest::class);
 
-        // CRUD::field('id');
         CRUD::field('name');
         CRUD::field('title');
         CRUD::field('description');
         CRUD::field('image')->type('image');
-        // CRUD::field('created_at');
-        // CRUD::field('updated_at');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -88,5 +82,10 @@ class TestimonialCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+    protected function setupShowOperation()
+    {
+        $this->crud->setShowContentClass('col-md-12');
+        $this->setupListOperation();
     }
 }

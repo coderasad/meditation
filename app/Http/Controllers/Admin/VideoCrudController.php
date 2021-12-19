@@ -39,7 +39,6 @@ class VideoCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id');
         CRUD::column('video');
         CRUD::column('text');
 

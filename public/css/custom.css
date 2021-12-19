@@ -1,0 +1,4 @@
+.card.no-padding > table.table {
+    table-layout: fixed;
+    width: 100%;
+}

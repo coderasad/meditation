@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = Order::with('orderable', 'orderable.category')
+            ->where('user_id', Auth::user()->id)
+            ->paginate(10);
+        return view('home', compact('data'));
     }
 }

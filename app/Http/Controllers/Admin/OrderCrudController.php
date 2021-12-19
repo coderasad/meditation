@@ -45,8 +45,23 @@ class OrderCrudController extends CrudController
         CRUD::column('transaction_id');
         CRUD::column('currency');
         CRUD::column('user_id');
-        CRUD::column('orderable_type');
-        CRUD::column('orderable_id');
+        CRUD::addColumn([
+            'label' => "Course title",
+            'type' => "select",
+            'name' => 'orderable_id',
+            'entity' => 'orderable',
+            'attribute' => "title",
+
+        ]);
+        CRUD::addColumn([
+            'label' => "Course Type",
+            'type' => "closure",
+            'name' => 'orderable_type',
+            'entity' => 'orderable',
+            'function' => function ($entity) {
+                return $entity->orderable->category->title;
+            }
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -94,5 +109,59 @@ class OrderCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    protected function setupShowOperation()
+    {
+        $this->crud->setShowContentClass('col-md-12');
+
+        CRUD::column('invoice_no');
+        CRUD::column('amount');
+        CRUD::column('transaction_id');
+        CRUD::column('currency');
+        CRUD::addColumn([
+            'name' => 'payment_details',
+            'type' => 'closure',
+            'function' => function ($entity) {
+                $table = "<table class='table table-responsive table-striped table-hover'>
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>";
+                foreach (json_decode($entity->payment_details) as $key => $value) {
+                    $table .= "<tr>
+                                    <th>$key</th>
+                                    <th>$value</th>
+                                </tr>";
+                }
+                $table .= "</tbody></table>";
+
+                return $table;
+            }
+        ]);
+        CRUD::addColumn([
+            'name' => 'user_id',
+            'entity' => 'user',
+        ]);
+        CRUD::addColumn([
+            'label' => "Course title",
+            'type' => "select",
+            'name' => 'orderable_id',
+            'entity' => 'orderable',
+            'attribute' => "title",
+
+        ]);
+        CRUD::addColumn([
+            'label' => "Course Type",
+            'type' => "closure",
+            'name' => 'orderable_type',
+            'entity' => 'orderable',
+            'function' => function ($entity) {
+                return $entity->orderable->category->title;
+            }
+        ]);
     }
 }
