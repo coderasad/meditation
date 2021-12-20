@@ -77,4 +77,10 @@ class MeditationTypeCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
+    protected function setupShowOperation()
+    {
+        $this->crud->setShowContentClass('col-md-12');
+        CRUD::column('image')->type('image');
+        $this->setupListOperation();
+    }
 }

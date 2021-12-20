@@ -1828,6 +1828,7 @@ img, svg {
     height: 345px;
 }
 
+
 .tryout-video{
     border-radius: 10px;
     overflow: hidden;
@@ -1848,4 +1849,22 @@ img, svg {
     color: rgba(96, 96, 96, 1);
     font-size: 16px;
     margin-bottom: 50px;
+}
+button#sslczPayBtn {
+    display: block !important;
+    width: 243px !important;
+    height: 49px !important;
+    line-height: 4.9rem !important;
+    color: #000000 !important;
+    background-color: #FFF !important;
+    border: 1px solid #000 !important;
+    padding: unset !important;
+    text-transform: unset !important;
+    font-size: 2rem !important;
+    border-radius: unset;
+}
+
+button#sslczPayBtn:hover {
+    background: #B6A75B !important;
+    color: #FFFFFF !important;
 }

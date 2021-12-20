@@ -53,3 +53,7 @@ Route::post('/cancel', 'SslCommerzPaymentController@cancel');
 
 Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 //SSLCOMMERZ END
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

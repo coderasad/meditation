@@ -148,4 +148,10 @@ class CourseStubCrudController extends CrudController
             return redirect()->back();
         }
     }
+
+    protected function setupShowOperation()
+    {
+        $this->crud->setShowContentClass('col-md-12');
+        $this->setupListOperation();
+    }
 }

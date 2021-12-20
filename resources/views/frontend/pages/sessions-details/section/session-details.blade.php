@@ -1,3 +1,4 @@
+@php(!auth()->check() ? session()->put('url.intended', url()->full()) : false)
 <section class="sessions-details-section py-70">
     <div class="container">
         <div class="row g-5">
@@ -11,7 +12,24 @@
                         <img src="{{ asset($data->image) }}" alt="Sessions Details" class="img">
                     </div>
                     <div class="sd-btn">
-                        <a href="javascript:void(0)" class="secondary-btn join-btn">Join</a>
+                        <button class="secondary-btn join-btn" id="sslczPayBtn"
+                                token="if you have any token validation"
+                                postdata="your javascript arrays or objects which requires in backend"
+                                order="If you already have the transaction generated for current order"
+                                endpoint="{{ url('/pay-via-ajax') }}"> Pay Now
+                        </button>
+                        {{--@if(Auth::user())
+                            <button class="secondary-btn join-btn" id="sslczPayBtn"
+                                    token="if you have any token validation"
+                                    postdata="your javascript arrays or objects which requires in backend"
+                                    order="If you already have the transaction generated for current order"
+                                    endpoint="{{ url('/pay-via-ajax') }}"> Pay Now
+                            </button>
+                        @else
+                            <a class="secondary-btn join-btn"
+                               href="{{ url('/login') }}"> Pay Now
+                            </a>
+                        @endif--}}
                     </div>
                     <div class="sd-text-box">
                         <h3 class="ps-700 c00 s28">What you’ll learn</h3>
@@ -48,3 +66,34 @@
 {{--        <hr class="cd-hr">--}}
     </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script>
+    let isLogin = !!"{{auth()->check()}}";
+    let sslczPayBtn = document.querySelector("#sslczPayBtn");
+    sslczPayBtn.addEventListener('click', (event) => {
+        if (!isLogin) {
+            window.location.href = "{{route('login')}}"
+        }
+    })
+</script>
+
+<script>
+    var obj = {};
+    obj.user = {{auth()->id()}};
+    obj.productId = {{$data->id}};
+    obj.productType = "{{$data->category->title}}";
+    obj.url = "course-details";
+
+    $('#sslczPayBtn').prop('postdata', obj);
+
+    (function (window, document) {
+        var loader = function () {
+            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+            // script.src = "https://seamless-epay.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7); // USE THIS FOR LIVE
+            script.src = "{{config('sslcommerz.sslCmmerzJs')}}?" + Math.random().toString(36).substring(7); // USE THIS FOR SANDBOX
+            tag.parentNode.insertBefore(script, tag);
+        };
+
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+    })(window, document);
+</script>

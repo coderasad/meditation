@@ -97,4 +97,10 @@ class SatoriCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
+
+    protected function setupShowOperation()
+    {
+        $this->crud->setShowContentClass('col-md-12');
+        $this->setupListOperation();
+    }
 }

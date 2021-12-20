@@ -37,16 +37,34 @@
                     <li>
                         <a href="{{ url('tryouts') }}" class="ps-700 s18 uppercase c4a active">TRYOUTS</a>
                     </li>
+                    @if(empty(auth()->user()))
+                        <li>
+                            <a href="{{ url('signin') }}" class="ps-700 s18 uppercase c4a">LOGIN IN </a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="{{ url('home') }}" class="ps-700 s18 uppercase c4a">PROFILE </a>
+                        </li>
+                        <li>
+                            <a class="ps-700 s18 uppercase c4a" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                    @endif
                     <li>
-                        <a href="{{ url('signin') }}" class="ps-700 s18 uppercase c4a">LOGIN IN</a>
-                    </li>
-                    <li class="d-flex">
                         <img src="{{ asset('') }}asset/frontend/images/mute.svg" alt="">
                     </li>
-                    <li class="me-0">
-                        <form class="d-flex align-items-center">
-                            <input class="form-control me-2 header-search " type="search" placeholder="Search" aria-label="Search">
-                            <button class="align-items-center btn d-flex header-search-btn justify-content-center" type="submit"><img src="{{ asset('') }}asset/frontend/images/search.png" alt=""></button>
+                    <li>
+                        <form class="d-flex">
+                            <input class="form-control me-2 header-search " type="search" placeholder="Search"
+                                   aria-label="Search">
+                            <button class="btn" type="submit"><img src="{{ asset('') }}asset/frontend/images/search.png"                                                                   alt=""></button>
                         </form>
                     </li>
 
